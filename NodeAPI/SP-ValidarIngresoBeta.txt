@@ -1,0 +1,29 @@
+Create PROCEDURE validarIngresoBeta
+(  
+      @code VARCHAR(100)  
+      @idEdificio int
+)  
+AS  
+DECLARE @resultado int  
+BEGIN TRAN  
+IF EXISTS  
+    (  
+          SELECT * FROM llaves
+          WHERE llaves.cadenaQr =  @code  
+        )  
+     BEGIN  
+         SET  @ResultValue = 1  
+     END  
+ELSE
+    BEGIN
+     SET @ResultValue = 0
+    END
+IF @ResultValue <> 0 OR @ResultValue <> 1  
+     BEGIN  
+            ROLLBACK TRAN  
+      END  
+ELSE  
+      BEGIN  
+            COMMIT TRAN  
+      END  
+RETURN @ResultValue

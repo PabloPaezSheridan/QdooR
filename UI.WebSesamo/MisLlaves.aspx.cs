@@ -43,13 +43,13 @@ namespace UI.WebSesamo
             LoadGrid();
         }
 
-        protected void gvGetLlavexUsuario_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DateTime fechayhoraini = DateTime.ParseExact(,"MM-dd-yyyy HH:mm:ss", CultureInfo.InvariantCulture);
-            //DateTime fechayhoraini = DateTime.Parse(gvGetLlavesxUsuario.SelectedRow.Cells[0].Text); /// esto es el problema no se guara nada en fechahoraini
-            LlaveLogic llaveLogic = new LlaveLogic();
-            llaveLogic.Inhabilitar(usrActual.Dpto, usrActual.CodigoPostalEdificio, usrActual.CalleEdificio, usrActual.NroCalleEdificio, fechayhoraini);
-            LoadGrid();
-        }
+        //protected void gvGetLlavexUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    DateTime fechayhoraini = DateTime.ParseExact("MM-dd-yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+        //    //DateTime fechayhoraini = DateTime.Parse(gvGetLlavesxUsuario.SelectedRow.Cells[0].Text); /// esto es el problema no se guara nada en fechahoraini
+        //    LlaveLogic llaveLogic = new LlaveLogic();
+        //    llaveLogic.Inhabilitar(usrActual.Dpto, usrActual.CodigoPostalEdificio, usrActual.CalleEdificio, usrActual.NroCalleEdificio, fechayhoraini);
+        //    LoadGrid();
+        //}
     }
 }

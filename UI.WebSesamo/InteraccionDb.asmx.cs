@@ -20,39 +20,39 @@ namespace UI.WebSesamo
     public class InteraccionDb : System.Web.Services.WebService
     {
 
-        [WebMethod]
-        public Boolean ValidarLlave(int CP, string calleEdificio, string nroCalleEdificio, string cadenaQr)
-        {
-            LlaveLogic lL = new LlaveLogic();
-            Llave llaveActual = lL.GetOnexEdificio(cadenaQr, CP, calleEdificio, nroCalleEdificio);
-            if (llaveActual != null && llaveActual.Habilitada)
-            {
-                if (llaveActual.desechable)
-                {
-                    llaveActual.Habilitada = false;
-                    lL.Update(llaveActual);
-                }
-                //Deshabilito las llaves excedidas en su tiempo de caducidad cuando son probada (no cuando se excede su tiempo realmente), quizas sea mejor hacer esto en un trigger o en un sp que limpie la base constanemnte, pero esto alivia la base de datos
-                else
-                {
-                    if(llaveActual.FechayHoraFin < DateTime.Now)
-                    {
-                        llaveActual.Habilitada = false;
-                        return false;
-                    }
-                }
+        //[WebMethod]
+        //public Boolean ValidarLlave(int CP, string calleEdificio, string nroCalleEdificio, string cadenaQr)
+        //{
+        //    LlaveLogic lL = new LlaveLogic();
+        //    Llave llaveActual = lL.GetOnexEdificio(cadenaQr, CP, calleEdificio, nroCalleEdificio);
+        //    if (llaveActual != null && llaveActual.Habilitada)
+        //    {
+        //        if (llaveActual.desechable)
+        //        {
+        //            llaveActual.Habilitada = false;
+        //            lL.Update(llaveActual);
+        //        }
+        //        //Deshabilito las llaves excedidas en su tiempo de caducidad cuando son probada (no cuando se excede su tiempo realmente), quizas sea mejor hacer esto en un trigger o en un sp que limpie la base constanemnte, pero esto alivia la base de datos
+        //        else
+        //        {
+        //            if(llaveActual.FechayHoraFin < DateTime.Now)
+        //            {
+        //                llaveActual.Habilitada = false;
+        //                return false;
+        //            }
+        //        }
 
-                LlaveActivadaLogic llal = new LlaveActivadaLogic();
-                llal.Add(llaveActual);
+        //        LlaveActivadaLogic llal = new LlaveActivadaLogic();
+        //        llal.Add(llaveActual);
 
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
             
-        }
+        //}
 
         [WebMethod]
         public int suma (int a, int b)
