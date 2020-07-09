@@ -31,10 +31,12 @@ app.get('/ingresar/:code/:edificio', (req, res) => {
       console.log(error)
     }
     let request = new db.Request()
-    request.query('select * from llaves', (err, record) => {
+    request.query(`Declare @resultado int
+                   Execute @resultado = validarIngresoBeta @code = '${req.params.code}', @idEdificio = ${parseInt(req.params.edificio)};
+                   Select @resultado`, (err, record) => {
       if (err) console.log(err)
-      res.json(record)
+      res.json(record["recordset"][0][""])
     })
+    // res.json([req.params.code, req.params.edificio])
   })
-  // res.json([req.params.code, req.params.edificio])
 })

@@ -9,7 +9,7 @@ BEGIN TRAN
 IF EXISTS  
     (  
           SELECT * FROM llaves
-          WHERE llaves.cadenaQr =  @code  
+          WHERE llaves.cadenaQr =  @code AND llaves.idEdificio = @idEdificio
         )  
      BEGIN  
          SET  @resultado = 1  
@@ -18,7 +18,7 @@ ELSE
     BEGIN
      SET @resultado = 0
     END
-IF @resultado <> 0 OR @resultado <> 1  
+IF @resultado <> 0 OR @resultado <> 1
      BEGIN  
             ROLLBACK TRAN  
       END  
@@ -28,7 +28,7 @@ ELSE
       END  
 RETURN @resultado
 
---------------------------------------------------------------------------------------
+
 
 Declare @resultado int
 Execute @resultado = validarIngresoBeta @code = '66lkws8CA7AbVba', @idEdificio = 2;
