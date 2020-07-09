@@ -1,7 +1,7 @@
 Create PROCEDURE validarIngresoBeta
 (  
-      @code VARCHAR(100)  
-      @idEdificio int
+      @code VARCHAR(100),  
+      @idEdificio Int
 )  
 AS  
 DECLARE @resultado int  
@@ -12,13 +12,13 @@ IF EXISTS
           WHERE llaves.cadenaQr =  @code  
         )  
      BEGIN  
-         SET  @ResultValue = 1  
+         SET  @resultado = 1  
      END  
 ELSE
     BEGIN
-     SET @ResultValue = 0
+     SET @resultado = 0
     END
-IF @ResultValue <> 0 OR @ResultValue <> 1  
+IF @resultado <> 0 OR @resultado <> 1  
      BEGIN  
             ROLLBACK TRAN  
       END  
@@ -26,4 +26,11 @@ ELSE
       BEGIN  
             COMMIT TRAN  
       END  
-RETURN @ResultValue
+RETURN @resultado
+
+--------------------------------------------------------------------------------------
+
+Declare @resultado int
+Execute @resultado = validarIngresoBeta @code = '66lkws8CA7AbVba', @idEdificio = 2;
+Select @resultado
+
