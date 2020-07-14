@@ -17,7 +17,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdLlave = new SqlCommand("insert into llaves (cadenaQr,FechayHoraActivacion)" +
+                SqlCommand cmdLlave = new SqlCommand("insert into llavesActivadas (cadenaQr,FechayHoraActivacion)" +
                                                         "values (@cadenaQr, @FechayHoraAct) ", sqlConn);
 
                 cmdLlave.Parameters.Add("@FechayHoraAct", SqlDbType.DateTime).Value = DateTime.Now;

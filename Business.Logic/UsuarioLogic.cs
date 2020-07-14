@@ -8,29 +8,23 @@ using Data.Database;
 
 namespace Business.Logic
 {
-	public class UsuarioLogic : BusinessLogic
-	{
-		private Data.Database.UsuarioAdapter _UsuarioData;
-		public Data.Database.UsuarioAdapter UsuarioData
-		{
-			get { return _UsuarioData; }
-			set { _UsuarioData = value; }
-		}
+    public class UsuarioLogic : BusinessLogic
+    {
+        public Data.Database.UsuarioAdapter UsuarioData { get; set; }
 
-
-		public UsuarioLogic()
-		{
-			UsuarioData = new UsuarioAdapter();
-		}
-
-		public Business.Entities.Usuario GetOne(int CP, string Calle, string nroCalle, string dpto)
-		{
-			return UsuarioData.GetOne(CP,Calle,nroCalle, dpto);
-		}
-
-        public Business.Entities.Usuario ValidarUsuario(int CP, string Calle, string nroCalle, string dpto,string clave)
+        public UsuarioLogic()
         {
-            return UsuarioData.ValidarUsuario(CP, Calle, nroCalle, dpto,clave);
+            UsuarioData = new UsuarioAdapter();
+        }
+
+        public Business.Entities.Usuario GetOne(string NombreUsuario)
+        {
+            return UsuarioData.GetOne(NombreUsuario);
+        }
+
+        public Business.Entities.Usuario ValidarUsuario(string NombreUsuario, string Contraseña)
+        { 
+            return UsuarioData.ValidarUsuario(NombreUsuario, Contraseña);
         }
 
     }

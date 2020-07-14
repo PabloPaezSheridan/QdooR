@@ -8,32 +8,23 @@ namespace Business.Entities
 {
 	public class Edificio : BusinessEntity
 	{
+        public int IdEdificio { get; } //Solo lectura
+
         public int CodigoPostal { get; set; }
 
         public string Calle { get; set; }
 
         public int NroCalle { get; set; }
 
-        private string _Nombre;
-		public string Nombre
-		{
-			get { return _Nombre; }
-			set { _Nombre = value; }
-		}
+		public string Nombre { get; set; }
 
-		private string _Contacto;
-		public string Contacto
-		{
-			get { return _Contacto; }
-			set { _Contacto = value; }
-		}
+		public string Contacto { get; set; }
 
-		private string _NombreEmpresa;
-		public string NombreEmpresa
-		{
-			get { return _NombreEmpresa; }
-			set { _NombreEmpresa = value; }
-		}
+		public string NombreEmpresa { get; set; }
 
-	}
+        public string TipoAcceso { get; set; }
+
+
+
+    }
 }

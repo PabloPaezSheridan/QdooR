@@ -9,41 +9,19 @@ namespace Business.Entities
 	public class Usuario : BusinessEntity
 
 	{
-		private string _Dpto;
-		public string Dpto
-		{
-			get { return _Dpto; }
-			set { _Dpto = value; }
-		}
+        public string NombreUsuario { get; set; }
 
-        public int CodigoPostalEdificio { get; set; }
+		public string NombreyApellido { get; set; }
 
-        public string CalleEdificio { get; set; }
+		public string Celular { get; set; }
 
-        public string NroCalleEdificio { get; set; }
+        public string Contraseña { get; set; }
 
-        private string _NombreyApellido;
-		public string NombreyApellido
-		{
-			get { return _NombreyApellido; }
-			set { _NombreyApellido = value; }
-		}
+        public string Tipo { get; set; }
 
-		private string _Celular;
-		public string Celular
-		{
-			get { return _Celular; }
-			set { _Celular = value; }
-		}
+        public string Estado { get; set; }
 
-        private string _Contraseña;
-        public string Contraseña
-        {
-            get { return _Contraseña; }
-            set { _Contraseña = value; }
-        }
+        public string Email { get; set; }
 
-
-
-	}
+    }
 }

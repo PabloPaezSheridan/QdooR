@@ -10,12 +10,7 @@ namespace Business.Logic
 {
 	class EdificioLogic : BusinessLogic
 	{
-		private Data.Database.EdificioAdapter _EdificioData;
-		public Data.Database.EdificioAdapter EdificioData
-		{
-			get { return _EdificioData; }
-			set { _EdificioData = value; }
-		}
+		public Data.Database.EdificioAdapter EdificioData { get; set; }
 
 		
 		public EdificioLogic()

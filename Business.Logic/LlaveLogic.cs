@@ -34,34 +34,34 @@ namespace Business.Logic
             LlaveData.Insert(llave);
         }
 
-        public void Delete(string dpto, int CP, string Calle, string nroCalle, DateTime fechayhoraini)
+        public void Delete(int IdEdificio, string NombreUsuario, DateTime fechayhoraini)
         {
-            LlaveData.Delete(CP,Calle,nroCalle,dpto,fechayhoraini);
+            LlaveData.Delete(fechayhoraini, IdEdificio, NombreUsuario);
         }
 
-        public void Inhabilitar(string dpto, int CP, string Calle, string nroCalle, DateTime fechayhoraini)
+        public void Inhabilitar(int IdEdificio, string NombreUsuario, DateTime fechayhoraini)
         {
-            LlaveData.Inhabilitar(CP, Calle, nroCalle, dpto, fechayhoraini);
+            LlaveData.Inhabilitar(fechayhoraini, IdEdificio, NombreUsuario);
         }
 
-        public DataTable GetLlavesxUsuario(Usuario usr)
+        public DataTable GetLlavesxUsuario(Usuario usr, Edificio edi)
         {
-            return LlaveData.GetAllxUsuario(usr);
+            return LlaveData.GetAllxUsuarioEdificio(usr, edi);
         }
 
-        public DataTable GetLlavesHabilitadasxUsuario(Usuario usr)
+        public DataTable GetLlavesHabilitadasxUsuario(Usuario usr, Edificio edi)
         {
-            return LlaveData.GetAllHabilitadasxUsuario(usr);
+            return LlaveData.GetAllHabilitadasxUsuarioEdificio(usr, edi);
         }
 
-        public Llave GetOnexEdificio(string qr, int CP, string Calle, string nroCalle)
+        public Llave GetOnexEdificio(string qr, int IdEdificio)
         {
-            return LlaveData.GetOnexEdificio(qr, CP,Calle,nroCalle);
+            return LlaveData.GetOnexEdificio(qr, IdEdificio);
         }
 
-        public void Update(Llave llave)
+        public void Update(string CadenaQr, string Denominacion)
         {
-            LlaveData.Update(llave);
+            LlaveData.UpdateDenominacion(CadenaQr, Denominacion);
         }
     }
 }

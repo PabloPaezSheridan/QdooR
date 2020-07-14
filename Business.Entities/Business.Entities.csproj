@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BusinessEntity.cs" />
     <Compile Include="Edificio.cs" />
+    <Compile Include="Inmobiliaria.cs" />
     <Compile Include="Llave.cs" />
     <Compile Include="LlaveActivada.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
