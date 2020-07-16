@@ -39,9 +39,9 @@ namespace Business.Logic
             LlaveData.Delete(fechayhoraini, IdEdificio, NombreUsuario);
         }
 
-        public void Inhabilitar(int IdEdificio, string NombreUsuario, DateTime fechayhoraini)
+        public void Inhabilitar(int IdEdificio, string CadenaQr)
         {
-            LlaveData.Inhabilitar(fechayhoraini, IdEdificio, NombreUsuario);
+            LlaveData.Inhabilitar(CadenaQr, IdEdificio);
         }
 
         public DataTable GetLlavesxUsuario(Usuario usr, Edificio edi)

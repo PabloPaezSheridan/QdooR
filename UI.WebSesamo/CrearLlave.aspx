@@ -42,6 +42,11 @@
 			</h4>
             <p class="text-center">
 				&nbsp;</p>
+            <h4>
+				<asp:Label ID="lblDescripcion" runat="server" Text="Descripcion"></asp:Label>
+&nbsp;&nbsp;
+                <asp:TextBox ID="txtDenomLlave" runat="server" Width="162px"></asp:TextBox>
+            </h4>
             <p class="text-center">
 				</p>
 			<h4 class="text-center">

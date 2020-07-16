@@ -30,25 +30,38 @@ namespace UI.WebSesamo
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             UsuarioLogic usrlogic = new UsuarioLogic();
+            EdificioLogic edfLogic = new EdificioLogic();
             usr = new Usuario();
-            usr=usrlogic.GetOne(Int32.Parse(txtCP.Text), txtCalle.Text,txtNroCalle.Text,txtDpto.Text);
-            if (usr.Dpto!= null)
+            usr=usrlogic.GetOne(txtNombreUsuario.Text);
+
+            if (usr.NombreUsuario!= null)
             {
-                if(usr.Contraseña==txtContraseña.Text)
+                if(usr.Contraseña==txtContraseña.Text) 
                 {
-                    Session["usrActual"] = usr;
-                    Server.Transfer("CrearLlave.aspx");
+                    if (usr.Tipo == "inquilino")
+                    {
+                        Session["usrActual"] = usr;
+                        if (edfLogic.ContarEdificios(usr.NombreUsuario) < 2)
+                        {
+                            Session["edificioActual"] = edfLogic.GetOnexUsuario(usr.NombreUsuario);
+                            Server.Transfer("CrearLlave.aspx");
+                        }
+                        else
+                        {
+                            Server.Transfer("ListadoEdificios.aspx");
+                        }
+                        
+                    }
+                    else if (usr.Tipo == "inmobiliaria")
+                    {
+
+                    }
+                    
                 }
                 else
                 {
                     this.lblWarningContraseña.Visible = true;
-
-                    this.lblWarnCalle.Visible = false;
-                    this.lblWarnCp.Visible = false;
-                    this.lblWarnDpto.Visible = false;
-                    this.lblWarnNro.Visible = false;
-                    this.lblWarnDireccion.Visible = false;
-
+                    this.lblWarnNombreUsuario.Visible = false;
                     this.txtContraseña.Text = String.Empty;
                 }
             }
@@ -56,20 +69,9 @@ namespace UI.WebSesamo
             else
             {
                 this.lblWarningContraseña.Visible = false;
-
-                this.lblWarnCalle.Visible = true;
-                this.lblWarnCp.Visible = true;
-                this.lblWarnDpto.Visible = true;
-                this.lblWarnNro.Visible = true;
-                this.lblWarnDireccion.Visible = true;
-
+                this.lblWarnNombreUsuario.Visible = true;
                 this.txtContraseña.Text = String.Empty;
-
-                this.txtCalle.Text = String.Empty;
-                this.txtCP.Text = String.Empty;
-                this.txtNroCalle.Text = String.Empty;
-                this.txtDpto.Text = String.Empty;
-
+                this.txtNombreUsuario.Text = String.Empty;
             }
 
         }

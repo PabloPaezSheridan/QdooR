@@ -10,7 +10,7 @@
 namespace UI.WebSesamo {
     
     
-    public partial class MisLlaves {
+    public partial class ListadoEdificios {
         
         /// <summary>
         /// form1 control.
@@ -22,30 +22,21 @@ namespace UI.WebSesamo {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// btnCrearLlave control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnCrearLlave;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// lblMisLlaves control.
+        /// gvEdificiosxUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMisLlaves;
-        
-        /// <summary>
-        /// gvLlavesxUsuario control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvLlavesxUsuario;
+        protected global::System.Web.UI.WebControls.GridView gvEdificiosxUsuario;
     }
 }

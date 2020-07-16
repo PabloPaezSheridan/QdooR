@@ -24,8 +24,11 @@ namespace Data.Database
 				{
                     usr.NombreUsuario = (string)drUsr["nombreUsuario"];
                     usr.NombreyApellido= (string)drUsr["nombreyapellido"];
-					usr.Celular = (string)drUsr["celular"];
-                    usr.Contraseña = (string)drUsr["contraseña"];
+                    if(drUsr["celular"] != null)
+                    {
+                        usr.Celular = (Int64)drUsr["celular"];
+                    }
+					usr.Contraseña = (string)drUsr["contraseña"];
                     usr.Tipo = (string)drUsr["tipo"];
                     usr.Email = (string)drUsr["email"];
                     usr.Estado = (string)drUsr["estado"];
@@ -60,7 +63,7 @@ namespace Data.Database
                 {
                     usr.NombreUsuario = (string)drUsr["nombreUsuario"];
                     usr.NombreyApellido = (string)drUsr["nombreyapellido"];
-                    usr.Celular = (string)drUsr["celular"];
+                    usr.Celular = (int)drUsr["celular"];
                     usr.Contraseña = (string)drUsr["contraseña"];
                     usr.Tipo = (string)drUsr["tipo"];
                     usr.Email = (string)drUsr["email"];

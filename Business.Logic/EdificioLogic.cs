@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using Business.Entities;
 using Data.Database;
 
+using System.Data;
+
 namespace Business.Logic
 {
-	class EdificioLogic : BusinessLogic
+	public class EdificioLogic : BusinessLogic
 	{
 		public Data.Database.EdificioAdapter EdificioData { get; set; }
 
@@ -17,6 +19,26 @@ namespace Business.Logic
 		{
 			EdificioData = new EdificioAdapter();
 		}
+
+        public Edificio GetOne(int IdEdificio)
+        {
+            return EdificioData.GetOne(IdEdificio);
+        }
+
+        public Edificio GetOnexUsuario(string NombreUsuario)
+        {
+            return EdificioData.GetOnexUsuario(NombreUsuario);
+        }
+
+        public int ContarEdificios(string NombreUsuario)
+        {
+            return EdificioData.ContarEdificiosxUsuario(NombreUsuario);
+        }
+
+        public DataTable GetEdificiosxUsuario(string NombreUsuario)
+        {
+            return EdificioData.GetEdificiosxUsuario(NombreUsuario);
+        }
 		
 	}
 }

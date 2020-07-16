@@ -13,7 +13,7 @@ namespace Business.Entities
 
 		public string NombreyApellido { get; set; }
 
-		public string Celular { get; set; }
+		public Int64 Celular { get; set; }
 
         public string Contraseña { get; set; }
 

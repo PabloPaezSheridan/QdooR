@@ -8,11 +8,11 @@ namespace Business.Entities
 {
     class Inmobiliaria : BusinessEntity
     {
-        public int Cuit { get; set; }
+        public Int64 Cuit { get; set; }
 
         public string Denominacion { get; set; }
 
-        public int Telefono { get; set; }
+        public Int64 Telefono { get; set; }
 
         public string Email { get; set; }
 

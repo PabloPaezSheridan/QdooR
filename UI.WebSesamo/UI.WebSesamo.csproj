@@ -85,6 +85,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="CrearLlave.aspx" />
     <Content Include="InteraccionDb.asmx" />
+    <Content Include="ListadoEdificios.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="MisLlaves.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -144,6 +145,13 @@
     <Compile Include="InteraccionDb.asmx.cs">
       <DependentUpon>InteraccionDb.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListadoEdificios.aspx.cs">
+      <DependentUpon>ListadoEdificios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListadoEdificios.aspx.designer.cs">
+      <DependentUpon>ListadoEdificios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

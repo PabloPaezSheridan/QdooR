@@ -22,9 +22,9 @@ namespace Business.Entities
 
         // No olvidarse de las variables de solo lectura 
 
-		public DateTime FechayHoraIni { get; set; }
+		public DateTime fechayHoraCreacion { get; set; }
 
-        public Nullable<DateTime> FechayHoraFin { get; set; }
+        public Nullable<DateTime> fechayHoraCaducacion { get; set; }
 
         public string Denominacion { get; set; }
 

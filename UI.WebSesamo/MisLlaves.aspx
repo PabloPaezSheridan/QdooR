@@ -26,12 +26,14 @@
         </div>
 	    
         <div>
-            <asp:GridView ID="gvGetLlavesxUsuario" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="gvGetLlavexUsuario_SelectedIndexChanged">
+            <asp:GridView ID="gvLlavesxUsuario" runat="server" AutoGenerateColumns="False" DataKeyNames="cadenaQr" OnSelectedIndexChanged="gvGetLlavexUsuario_SelectedIndexChanged">
                 <Columns>
+                    <asp:BoundField DataField="cadenaQr" Visible="False" />
+                    <asp:BoundField DataField="denominacion" HeaderText="Denominación" />
                     <asp:BoundField DataField="fechorCre" HeaderText="Fecha y Hora Creacion" />
                     <asp:BoundField DataField="fechorCad" HeaderText="Fecha y Hora Caducidad" />
                     <asp:BoundField DataField="desechable" HeaderText="Desechable" />
-                    <asp:CommandField SelectText="Eliminar" ShowSelectButton="True" />
+                    <asp:CommandField SelectText="Eliminar" ShowSelectButton="True" ButtonType="Button" />
                 </Columns>
                 <HeaderStyle BackColor="#009999" />
             </asp:GridView>

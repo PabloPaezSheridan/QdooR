@@ -17,12 +17,20 @@ namespace UI.WebSesamo
     public partial class CrearLlave : System.Web.UI.Page
     {
         static int dur;
-
         static Usuario usrActual = new Usuario();
+        static Edificio edificioActual = new Edificio();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            usrActual = (Usuario)Session["usrActual"];
+            if (Session["usrActual"] != null)
+            {
+                usrActual = (Usuario)Session["usrActual"];
+                edificioActual = (Edificio)Session["edificioActual"];
+            }
+            else
+            {
+                Server.Transfer("Login.aspx");
+            }    
         }
 
         protected void chkDesechable_CheckedChanged(object sender, EventArgs e)
@@ -94,20 +102,23 @@ namespace UI.WebSesamo
         {
             Llave llave = new Llave();
             llave.CadenaQr = GenerarCadenaAleatoria(50);
-            llave.CodigoPostalEdificio = usrActual.CodigoPostalEdificio;
-            llave.CalleEdificio = usrActual.CalleEdificio;
-            llave.NroCalleEdificio = usrActual.NroCalleEdificio;
-            llave.Dpto = usrActual.Dpto;
-            llave.FechayHoraIni = DateTime.Now;
+            llave.IdEdificio = edificioActual.IdEdificio;
+            llave.NombreUsuario = usrActual.NombreUsuario;
+            llave.fechayHoraCreacion = DateTime.Now;
             llave.Habilitada = true;
+            if (this.txtDenomLlave.Text != null)
+            {
+                llave.Denominacion = this.txtDenomLlave.Text;
+            }
+                      
             if (this.chkDesechable.Checked)
             {
-                llave.FechayHoraFin = null;
+                llave.fechayHoraCaducacion = null;
                 llave.desechable = this.chkDesechable.Checked;
             }
             else
             {
-                llave.FechayHoraFin = DateTime.Now.AddSeconds(dur);
+                llave.fechayHoraCaducacion = DateTime.Now.AddSeconds(dur);
                 llave.desechable = this.chkDesechable.Checked;
             }
             LlaveLogic llaveLogic = new LlaveLogic();
@@ -130,6 +141,7 @@ namespace UI.WebSesamo
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
+            Session.Abandon();
             Server.Transfer("Login.aspx");
         }
     }

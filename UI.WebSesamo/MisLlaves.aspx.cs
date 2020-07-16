@@ -15,21 +15,27 @@ namespace UI.WebSesamo
 	public partial class MisLlaves : System.Web.UI.Page
 	{
         static Usuario usrActual = new Usuario();
+        static Edificio edificioActual = new Edificio();
 
         protected void Page_Load(object sender, EventArgs e)
 		{
-            
-            usrActual = (Usuario)Session["usrActual"];
-            LoadGrid();
-
-
+            if (Session["usrActual"] != null)
+            {
+                usrActual = (Usuario)Session["usrActual"];
+                edificioActual = (Edificio)Session["edificioActual"];
+                LoadGrid();
+            }
+            else
+            {
+                Server.Transfer("Login.aspx");
+            }
         }
 
         public void LoadGrid()
         {
             LlaveLogic ll = new LlaveLogic();
-            gvGetLlavesxUsuario.DataSource = ll.GetLlavesHabilitadasxUsuario(usrActual);
-            gvGetLlavesxUsuario.DataBind();
+            gvLlavesxUsuario.DataSource = ll.GetLlavesHabilitadasxUsuario(usrActual, edificioActual);
+            gvLlavesxUsuario.DataBind();
         }
 
         
@@ -40,6 +46,14 @@ namespace UI.WebSesamo
 
         protected void gvGetLlavexUsuario_Load(object sender, EventArgs e)
         {
+            LoadGrid();
+        }
+
+        protected void gvGetLlavexUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LlaveLogic llaveLogic = new LlaveLogic();
+            string cadenaQr = gvLlavesxUsuario.DataKeys[gvLlavesxUsuario.SelectedRow.RowIndex]["cadenaQr"].ToString();
+            llaveLogic.Inhabilitar(edificioActual.IdEdificio, cadenaQr);
             LoadGrid();
         }
 

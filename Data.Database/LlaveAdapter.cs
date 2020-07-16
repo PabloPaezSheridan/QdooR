@@ -18,22 +18,22 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdLlave = new SqlCommand("insert into llaves (cadenaQr,idEdificio,nombreUsuario,FechayHoraIni,FechayHoraFin,desechable,habilitada)" +
-                                                        "values (@cadenaQr,@idEdificio,@nombreUsuario,@fechayHoraIni,@fechayHoraFin,@desechable, @habilitada) ", sqlConn);
+                SqlCommand cmdLlave = new SqlCommand("insert into llaves (cadenaQr,idEdificio,nombreUsuario,denominacion,fechayHoraCreacion,fechayHoraCaducacion,desechable,habilitada)" +
+                                                        "values (@cadenaQr,@idEdificio,@nombreUsuario,@denominacion,@fechayHoraCreacion,@fechayHoraCaducacion,@desechable, @habilitada) ", sqlConn);
 
                 cmdLlave.Parameters.Add("@cadenaQr", SqlDbType.VarChar, 50).Value = llave.CadenaQr;
 
                 cmdLlave.Parameters.Add("@idEdificio", SqlDbType.Int).Value = llave.IdEdificio;
-                cmdLlave.Parameters.Add("@nombreUsuario", SqlDbType.VarChar, 50).Value = llave.NombreUsuario;
-
-                cmdLlave.Parameters.Add("@fechayHoraIni", SqlDbType.DateTime).Value = llave.FechayHoraIni;
-                if (llave.FechayHoraFin == null)
+                cmdLlave.Parameters.Add("@nombreUsuario", SqlDbType.VarChar).Value = llave.NombreUsuario;
+                cmdLlave.Parameters.Add("@denominacion", SqlDbType.VarChar).Value = llave.Denominacion;
+                cmdLlave.Parameters.Add("@fechayHoraCreacion", SqlDbType.DateTime).Value = llave.fechayHoraCreacion;
+                if (llave.fechayHoraCaducacion == null)
                 {
-                    cmdLlave.Parameters.Add("@fechayHoraFin", SqlDbType.DateTime).Value = DBNull.Value;
+                    cmdLlave.Parameters.Add("@fechayHoraCaducacion", SqlDbType.DateTime).Value = DBNull.Value;
                 }
                 else
                 {
-                    cmdLlave.Parameters.Add("@fechayHoraFin", SqlDbType.DateTime).Value = llave.FechayHoraFin;
+                    cmdLlave.Parameters.Add("@fechayHoraCaducacion", SqlDbType.DateTime).Value = llave.fechayHoraCaducacion;
                 }
                 cmdLlave.Parameters.Add("@desechable", SqlDbType.Bit).Value = llave.desechable;
 
@@ -66,8 +66,8 @@ namespace Data.Database
                 if (drLlaves.Read())
                 {
                     llave.CadenaQr = (string)drLlaves["cadenaQr"];
-                    llave.FechayHoraIni = (DateTime)drLlaves["FechayHoraIni"];
-                    llave.FechayHoraFin = (DateTime)drLlaves["FechayHoraFin"];
+                    llave.fechayHoraCreacion = (DateTime)drLlaves["fechayHoraCreacion"];
+                    llave.fechayHoraCaducacion = (DateTime)drLlaves["fechayHoraCaducacion"];
                     llave.IdEdificio = (int)drLlaves["idEdificio"];
                     llave.NombreUsuario = (string)drLlaves["nombreUsuario"];
                     llave.Habilitada = (bool)drLlaves["Habilitada"];
@@ -86,14 +86,14 @@ namespace Data.Database
             return llave;
         }
 
-        public void Delete(DateTime FechayHoraIni, int IdEdificio, string NombreUsuario)
+        public void Delete(DateTime fechayHoraCreacion, int IdEdificio, string NombreUsuario)
         {
             Llave llave = new Llave();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdLlave = new SqlCommand("Delete from llaves where convert(datetime, convert(char(19), FechayHoraIni, 126)) = @fechahoraini and nombreUsuario = @nombreUsuario and idEdificio = @idEdificio", sqlConn);
-                cmdLlave.Parameters.Add("@fechahoraini", SqlDbType.DateTime).Value = FechayHoraIni;
+                SqlCommand cmdLlave = new SqlCommand("Delete from llaves where convert(datetime, convert(char(19), fechayHoraCreacion, 126)) = @fechahoraini and nombreUsuario = @nombreUsuario and idEdificio = @idEdificio", sqlConn);
+                cmdLlave.Parameters.Add("@fechahoraini", SqlDbType.DateTime).Value = fechayHoraCreacion;
                 cmdLlave.Parameters.Add("@idEdificio", SqlDbType.Int).Value = IdEdificio;
                 cmdLlave.Parameters.Add("@nombreUsuario", SqlDbType.VarChar, 50).Value = NombreUsuario;
                 cmdLlave.ExecuteNonQuery();
@@ -111,15 +111,14 @@ namespace Data.Database
 
         }
 
-        public void Inhabilitar(DateTime FechayHoraIni, int IdEdificio, string NombreUsuario)
+        public void Inhabilitar(string CadenaQr, int IdEdificio)
         {
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdLlave = new SqlCommand("update llaves set habilitada = 'false' where FechayHoraini = @fechayHoraIni and idEdifcio = @idEdifcio and  nombreUsuario = @nombreUsuario", sqlConn);
-                cmdLlave.Parameters.Add("@fechahoraini", SqlDbType.DateTime).Value = FechayHoraIni;
+                SqlCommand cmdLlave = new SqlCommand("update llaves set habilitada = 0 where cadenaQr = @cadenaQr and idEdificio = @idEdificio", sqlConn);
                 cmdLlave.Parameters.Add("@idEdificio", SqlDbType.Int).Value = IdEdificio;
-                cmdLlave.Parameters.Add("@nombreUsuario", SqlDbType.VarChar, 50).Value = NombreUsuario;
+                cmdLlave.Parameters.Add("@cadenaQr", SqlDbType.VarChar).Value = CadenaQr;
                 cmdLlave.ExecuteNonQuery();
 
             }
@@ -141,7 +140,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdLlave = new SqlCommand("select ll.FechayHoraIni fechorCre,case  when ll.FechayHoraFin IS NULL then 'Sin especificar' else  CONVERT(varchar, getdate(), 1) end fechorCad , case ll.desechable  when '1' then 'Desechable' when '0' then 'No Desechable'  end as desechable from llaves ll where nombreUsuario = @nombreUsuario and idEdificio = @idEdificio", sqlConn);
+                SqlCommand cmdLlave = new SqlCommand("select ll.fechayHoraCreacion fechorCre,case  when ll.fechayHoraCaducacion IS NULL then 'Sin especificar' else  CONVERT(varchar, getdate(), 1) end fechorCad , case ll.desechable  when '1' then 'Desechable' when '0' then 'No Desechable'  end as desechable from llaves ll where nombreUsuario = @nombreUsuario and idEdificio = @idEdificio", sqlConn);
                 cmdLlave.Parameters.Add("@idEdificio", SqlDbType.Int).Value = edificio.IdEdificio;
                 cmdLlave.Parameters.Add("@nombreUsuario", SqlDbType.VarChar, 50).Value = usr.NombreUsuario;
 
@@ -169,9 +168,9 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdLlave = new SqlCommand("select ll.FechayHoraIni fechorCre,case  when ll.FechayHoraFin IS NULL then 'Sin especificar' else  CONVERT(varchar, getdate(), 1) end fechorCad , case ll.desechable  when '1' then 'Desechable' when '0' then 'No Desechable'  end as desechable from llaves ll where dpto=@dpto and codigoPostalEdificio = @CP and calleEdificio = @calleEdificio and nroCalleEdificio = @nroCalleEdificio and habilitada= 'true'", sqlConn);
-                cmdLlave.Parameters.Add("@idEdificio", SqlDbType.Int).Value = usr.NombreUsuario;
-                cmdLlave.Parameters.Add("@nombreUsuario", SqlDbType.VarChar, 50).Value = edificio.IdEdificio;
+                SqlCommand cmdLlave = new SqlCommand("select ll.cadenaQr cadenaQr, ll.denominacion denominacion, ll.fechayHoraCreacion fechorCre,case  when ll.fechayHoraCaducacion IS NULL then 'Sin especificar' else  CONVERT(varchar, getdate(), 1) end fechorCad , case ll.desechable  when '1' then 'Desechable' when '0' then 'No Desechable'  end as desechable from llaves ll where ll.idEdificio = @idEdificio and ll.nombreUsuario = @nombreUsuario and habilitada= 'true'", sqlConn);
+                cmdLlave.Parameters.Add("@nombreUsuario", SqlDbType.VarChar).Value = usr.NombreUsuario;
+                cmdLlave.Parameters.Add("@idEdificio", SqlDbType.Int).Value = edificio.IdEdificio;
 
                 SqlDataAdapter adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = cmdLlave;
