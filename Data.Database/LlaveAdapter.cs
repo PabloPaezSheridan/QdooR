@@ -168,7 +168,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdLlave = new SqlCommand("select ll.cadenaQr cadenaQr, ll.denominacion denominacion, ll.fechayHoraCreacion fechorCre,case  when ll.fechayHoraCaducacion IS NULL then 'Sin especificar' else  CONVERT(varchar, getdate(), 1) end fechorCad , case ll.desechable  when '1' then 'Desechable' when '0' then 'No Desechable'  end as desechable from llaves ll where ll.idEdificio = @idEdificio and ll.nombreUsuario = @nombreUsuario and habilitada= 'true'", sqlConn);
+                SqlCommand cmdLlave = new SqlCommand("select ll.cadenaQr cadenaQr, ll.denominacion  denominacion, ll.fechayHoraCreacion fechorCre,case  when ll.fechayHoraCaducacion IS NULL then 'Sin especificar' else  CONVERT(varchar, getdate(), 1) end fechorCad , ll.desechable desechable from llaves ll where ll.idEdificio = @idEdificio and ll.nombreUsuario = @nombreUsuario and habilitada= 'true'", sqlConn);
                 cmdLlave.Parameters.Add("@nombreUsuario", SqlDbType.VarChar).Value = usr.NombreUsuario;
                 cmdLlave.Parameters.Add("@idEdificio", SqlDbType.Int).Value = edificio.IdEdificio;
 

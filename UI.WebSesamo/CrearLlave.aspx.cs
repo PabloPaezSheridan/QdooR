@@ -106,11 +106,15 @@ namespace UI.WebSesamo
             llave.NombreUsuario = usrActual.NombreUsuario;
             llave.fechayHoraCreacion = DateTime.Now;
             llave.Habilitada = true;
-            if (this.txtDenomLlave.Text != null)
+            if(this.txtDenomLlave.Text == "")
+            {
+                llave.Denominacion = "Sin descripcion";
+            }
+            else
             {
                 llave.Denominacion = this.txtDenomLlave.Text;
             }
-                      
+                                          
             if (this.chkDesechable.Checked)
             {
                 llave.fechayHoraCaducacion = null;

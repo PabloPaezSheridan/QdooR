@@ -4,6 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
     <title></title>
     <style type="text/css">
         .auto-style1 {
@@ -72,12 +75,12 @@ textarea {
         </div>
         <div class="auto-style1">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:GridView ID="gvEdificiosxUsuario" runat="server" AutoGenerateColumns="False" DataKeyNames="idEdificio" OnSelectedIndexChanged="gvEdificiosxUsuario_SelectedIndexChanged">
+            <asp:GridView ID="gvEdificiosxUsuario" runat="server" AutoGenerateColumns="False" DataKeyNames="idEdificio" OnSelectedIndexChanged="gvEdificiosxUsuario_SelectedIndexChanged" Width="319px">
                 <Columns>
                     <asp:BoundField DataField="idEdificio" Visible="False" />
                     <asp:BoundField DataField="denominacion" HeaderText="Nombre" />
                     <asp:BoundField DataField="calle" HeaderText="Calle" />
-                    <asp:BoundField DataField="nroCalle" HeaderText="Nro de Calle" />
+                    <asp:BoundField DataField="nroCalle" HeaderText="Número" />
                     <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" ButtonType="Button" />
                 </Columns>
                 <HeaderStyle BackColor="#009999" />
