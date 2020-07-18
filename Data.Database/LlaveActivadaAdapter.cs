@@ -34,5 +34,33 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
+
+        public DataTable GetAllxLlaveEdificio(string CadenaQr)
+        {
+            List<Llave> llaves = new List<Llave>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdLlave = new SqlCommand("select la.fechayHoraActivacion fechoract from LlavesActivadas la where la.cadenaQr = @cadenaQr", sqlConn);
+                cmdLlave.Parameters.Add("@cadenaQr", SqlDbType.VarChar).Value = CadenaQr;
+               
+
+                SqlDataAdapter adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = cmdLlave;
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar las activaciones " + Ex.Message, Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+
+        }
     }
 }

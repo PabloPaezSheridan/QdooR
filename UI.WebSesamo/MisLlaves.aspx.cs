@@ -53,8 +53,8 @@ namespace UI.WebSesamo
         {
             LlaveLogic llaveLogic = new LlaveLogic();
             string cadenaQr = gvLlavesxUsuario.DataKeys[gvLlavesxUsuario.SelectedRow.RowIndex]["cadenaQr"].ToString();
-            llaveLogic.Inhabilitar(edificioActual.IdEdificio, cadenaQr);
-            LoadGrid();
+            Session["llaveActual"] = llaveLogic.GetOne(cadenaQr);
+            Server.Transfer("DetalleLlave.aspx");
         }
 
         //protected void gvGetLlavexUsuario_SelectedIndexChanged(object sender, EventArgs e)

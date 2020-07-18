@@ -33,7 +33,7 @@
                     <asp:BoundField DataField="fechorCre" HeaderText="Creacion" />
                     <asp:BoundField DataField="fechorCad" HeaderText="Caducidad" />
                     <asp:CheckBoxField DataField="desechable" HeaderText="Desechable" />
-                    <asp:CommandField SelectText="Eliminar" ShowSelectButton="True" ButtonType="Button" />
+                    <asp:CommandField SelectText="Detalle" ShowSelectButton="True" ButtonType="Button" />
                 </Columns>
                 <HeaderStyle BackColor="#009999" />
             </asp:GridView>

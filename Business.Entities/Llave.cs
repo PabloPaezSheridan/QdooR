@@ -24,7 +24,7 @@ namespace Business.Entities
 
 		public DateTime fechayHoraCreacion { get; set; }
 
-        public Nullable<DateTime> fechayHoraCaducacion { get; set; }
+        public DateTime fechayHoraCaducacion { get; set; }
 
         public string Denominacion { get; set; }
 

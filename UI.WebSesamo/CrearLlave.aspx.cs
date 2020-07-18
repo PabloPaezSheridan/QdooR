@@ -90,7 +90,6 @@ namespace UI.WebSesamo
 
         protected void MostrarImagen(Bitmap qrCodeImage)
         {
-            //qrCodeImage.Save(@"C:\Users\Pablo\Downloads", ImageFormat.Png);
             Response.ContentType = "image/jpeg";
             Response.AppendHeader("Content-Disposition", "attachment; filename=qr.jpg");
 
@@ -101,10 +100,12 @@ namespace UI.WebSesamo
         protected void btnCrearLlave_Click(object sender, EventArgs e)
         {
             Llave llave = new Llave();
+            LlaveLogic llaveLogic = new LlaveLogic();
+
             llave.CadenaQr = GenerarCadenaAleatoria(50);
             llave.IdEdificio = edificioActual.IdEdificio;
             llave.NombreUsuario = usrActual.NombreUsuario;
-            llave.fechayHoraCreacion = DateTime.Now;
+            llave.fechayHoraCreacion = llaveLogic.FechaFomateada(DateTime.Now);
             llave.Habilitada = true;
             if(this.txtDenomLlave.Text == "")
             {
@@ -117,18 +118,16 @@ namespace UI.WebSesamo
                                           
             if (this.chkDesechable.Checked)
             {
-                llave.fechayHoraCaducacion = null;
+                llave.fechayHoraCaducacion = llaveLogic.FechaFomateada(DateTime.Now.AddDays(7));
                 llave.desechable = this.chkDesechable.Checked;
             }
             else
             {
-                llave.fechayHoraCaducacion = DateTime.Now.AddSeconds(dur);
+                llave.fechayHoraCaducacion = llaveLogic.FechaFomateada(DateTime.Now.AddSeconds(dur));
                 llave.desechable = this.chkDesechable.Checked;
             }
-            LlaveLogic llaveLogic = new LlaveLogic();
             llaveLogic.Create(llave);
-            MisLlaves MisLlavesForm = new MisLlaves();
-
+            
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
             QRCodeData qrCodeData = qrGenerator.CreateQrCode(llave.CadenaQr, QRCodeGenerator.ECCLevel.Q);
             QRCode qrCode = new QRCode(qrCodeData);

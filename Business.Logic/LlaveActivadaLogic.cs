@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Business.Entities;
 using Data.Database;
+using System.Data;
 
 namespace Business.Logic
 {
@@ -15,13 +16,18 @@ namespace Business.Logic
 
         public LlaveActivadaLogic()
         {
-
+            llaveActivadaData = new LlaveActivadaAdapter();
         }
 
         public void Add(Llave llave)
         {
             llaveActivadaData = new LlaveActivadaAdapter();
             llaveActivadaData.Insert(llave);
+        }
+
+        public DataTable GetAllxLlave(string CadenaQr)
+        {
+            return llaveActivadaData.GetAllxLlaveEdificio(CadenaQr);
         }
 
     }

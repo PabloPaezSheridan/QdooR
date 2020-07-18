@@ -7,6 +7,7 @@ using Business.Entities;
 using Data.Database;
 
 using System.Data;
+using System.Globalization;
 
 namespace Business.Logic
 {
@@ -54,14 +55,23 @@ namespace Business.Logic
             return LlaveData.GetAllHabilitadasxUsuarioEdificio(usr, edi);
         }
 
-        public Llave GetOnexEdificio(string qr, int IdEdificio)
+        public Llave GetOne(string qr)
         {
-            return LlaveData.GetOnexEdificio(qr, IdEdificio);
+            return LlaveData.GetOne(qr);
         }
 
         public void Update(string CadenaQr, string Denominacion)
         {
             LlaveData.UpdateDenominacion(CadenaQr, Denominacion);
+        }
+
+        public DateTime FechaFomateada(DateTime fechaOriginal)
+        {
+            string timeString = fechaOriginal.ToString("dd'/'MM'/'yyyy HH:mm:ss");
+            IFormatProvider culture = new CultureInfo("es-AR", true);
+            DateTime dateVal = DateTime.ParseExact(timeString, "dd/MM/yyyy HH:mm:ss", culture);
+
+            return dateVal;
         }
     }
 }

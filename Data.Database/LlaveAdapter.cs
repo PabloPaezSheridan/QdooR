@@ -52,22 +52,24 @@ namespace Data.Database
         }
 
 
-        public Llave GetOnexEdificio(string qr, int IdEdificio)
+        public Llave GetOne(string qr)
         {
             Llave llave = new Llave();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdLlave = new SqlCommand("select * from llaves ll inner join edificios e on e.idEdificio = @idEdificio and ll.cadenaQr = @qr ", sqlConn);
+                SqlCommand cmdLlave = new SqlCommand("select * from llaves ll where ll.cadenaQr = @qr ", sqlConn);
                 cmdLlave.Parameters.Add("@qr", SqlDbType.VarChar, 50).Value = qr;
 
-                cmdLlave.Parameters.Add("@idEdificio", SqlDbType.Int).Value = IdEdificio;
+                
                 SqlDataReader drLlaves = cmdLlave.ExecuteReader();
                 if (drLlaves.Read())
                 {
                     llave.CadenaQr = (string)drLlaves["cadenaQr"];
                     llave.fechayHoraCreacion = (DateTime)drLlaves["fechayHoraCreacion"];
+                    llave.desechable = (Boolean)drLlaves["desechable"];
                     llave.fechayHoraCaducacion = (DateTime)drLlaves["fechayHoraCaducacion"];
+                    llave.Denominacion = (string)drLlaves["denominacion"];
                     llave.IdEdificio = (int)drLlaves["idEdificio"];
                     llave.NombreUsuario = (string)drLlaves["nombreUsuario"];
                     llave.Habilitada = (bool)drLlaves["Habilitada"];
@@ -133,6 +135,7 @@ namespace Data.Database
             }
 
         }
+        
 
         public DataTable GetAllxUsuarioEdificio(Usuario usr, Edificio edificio)
         {
@@ -168,7 +171,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdLlave = new SqlCommand("select ll.cadenaQr cadenaQr, ll.denominacion  denominacion, ll.fechayHoraCreacion fechorCre,case  when ll.fechayHoraCaducacion IS NULL then 'Sin especificar' else  CONVERT(varchar, getdate(), 1) end fechorCad , ll.desechable desechable from llaves ll where ll.idEdificio = @idEdificio and ll.nombreUsuario = @nombreUsuario and habilitada= 'true'", sqlConn);
+                SqlCommand cmdLlave = new SqlCommand("select ll.cadenaQr cadenaQr, ll.denominacion  denominacion, ll.fechayHoraCreacion fechorCre, ll.fechayHoraCaducacion fechorCad , ll.desechable desechable from llaves ll where ll.idEdificio = @idEdificio and ll.nombreUsuario = @nombreUsuario and habilitada= 'true'", sqlConn);
                 cmdLlave.Parameters.Add("@nombreUsuario", SqlDbType.VarChar).Value = usr.NombreUsuario;
                 cmdLlave.Parameters.Add("@idEdificio", SqlDbType.Int).Value = edificio.IdEdificio;
 
