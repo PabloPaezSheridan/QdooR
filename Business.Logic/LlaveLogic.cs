@@ -65,13 +65,6 @@ namespace Business.Logic
             LlaveData.UpdateDenominacion(CadenaQr, Denominacion);
         }
 
-        public DateTime FechaFomateada(DateTime fechaOriginal)
-        {
-            string timeString = fechaOriginal.ToString("dd'/'MM'/'yyyy HH:mm:ss");
-            IFormatProvider culture = new CultureInfo("es-AR", true);
-            DateTime dateVal = DateTime.ParseExact(timeString, "dd/MM/yyyy HH:mm:ss", culture);
-
-            return dateVal;
-        }
+       
     }
 }

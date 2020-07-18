@@ -105,7 +105,7 @@ namespace UI.WebSesamo
             llave.CadenaQr = GenerarCadenaAleatoria(50);
             llave.IdEdificio = edificioActual.IdEdificio;
             llave.NombreUsuario = usrActual.NombreUsuario;
-            llave.fechayHoraCreacion = llaveLogic.FechaFomateada(DateTime.Now);
+            llave.fechayHoraCreacion = DateTime.Now;
             llave.Habilitada = true;
             if(this.txtDenomLlave.Text == "")
             {
@@ -118,12 +118,12 @@ namespace UI.WebSesamo
                                           
             if (this.chkDesechable.Checked)
             {
-                llave.fechayHoraCaducacion = llaveLogic.FechaFomateada(DateTime.Now.AddDays(7));
+                llave.fechayHoraCaducacion = DateTime.Now.AddDays(7);
                 llave.desechable = this.chkDesechable.Checked;
             }
             else
             {
-                llave.fechayHoraCaducacion = llaveLogic.FechaFomateada(DateTime.Now.AddSeconds(dur));
+                llave.fechayHoraCaducacion = DateTime.Now.AddSeconds(dur);
                 llave.desechable = this.chkDesechable.Checked;
             }
             llaveLogic.Create(llave);

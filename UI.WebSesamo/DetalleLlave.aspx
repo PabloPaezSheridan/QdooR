@@ -46,10 +46,11 @@
             <h1>
 				<asp:LinkButton ID="btnMisLlaves" runat="server" OnClick="btnMisLlaves_Click" Font-Size="Large">Atras</asp:LinkButton>
 &nbsp;&nbsp;&nbsp;
-                <asp:Label ID="Label1" runat="server" CssClass="auto-style3" ForeColor="#009999" Text="Detalle de la Llave"></asp:Label>
+                <asp:Label ID="Label1" runat="server" CssClass="auto-style3" ForeColor="#009999" Text="Detalle"></asp:Label>
             </h1>
         </div>
         <strong>&nbsp;<br />
+        &nbsp;
         <asp:Label runat="server" Text="Descripción:"></asp:Label>
         </strong>&nbsp;
         <asp:Label ID="lblDenominacion" runat="server" Text="Label"></asp:Label>
@@ -60,14 +61,16 @@
 &nbsp;
         <asp:Label runat="server" Text="Creación:"></asp:Label>
         </strong>&nbsp;<asp:Label ID="lblCreacion" runat="server" Text="Label"></asp:Label>
-        <strong>&nbsp;
+        <strong>
+        <br />
+        &nbsp;
         <asp:Label ID="Label2" runat="server" Text="Caducacion:"></asp:Label>
         </strong>&nbsp;<asp:Label ID="lblCaducacion" runat="server" Text="Label"></asp:Label>
 &nbsp;&nbsp;
         <br />
         <br />
 &nbsp;
-        <asp:Button ID="btnDescargarQr" runat="server" OnClick="btnDescargarQr_Click" Text="Descargar QR" Width="101px" />
+        <asp:Button ID="btnDescargarQr" runat="server" OnClick="btnDescargarQr_Click" Text="Descargar" Width="101px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar" Width="100px" />
         <br />
