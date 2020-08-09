@@ -23,5 +23,7 @@ namespace Business.Entities
 
         public string Email { get; set; }
 
+        public Int64 Cuit { get; set; }
+
     }
 }

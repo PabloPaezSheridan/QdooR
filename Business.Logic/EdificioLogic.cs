@@ -39,6 +39,11 @@ namespace Business.Logic
         {
             return EdificioData.GetEdificiosxUsuario(NombreUsuario);
         }
+
+        public DataTable GetEdificiosxInmobiliaria(Inmobiliaria inmobiliaria)
+        {
+            return EdificioData.GetEdificiosxInmobiliaria(inmobiliaria);
+        }
 		
 	}
 }

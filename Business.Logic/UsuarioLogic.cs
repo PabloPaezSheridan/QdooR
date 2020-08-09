@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Business.Entities;
 using Data.Database;
+using System.Data;
 
 namespace Business.Logic
 {
@@ -26,6 +28,12 @@ namespace Business.Logic
         { 
             return UsuarioData.ValidarUsuario(NombreUsuario, Contraseña);
         }
+
+        public DataTable GetallxEdificio(int IdEdificio)
+        {
+            return UsuarioData.GetallxEdificio(IdEdificio);
+        }
+
 
     }
 }

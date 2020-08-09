@@ -38,9 +38,9 @@ namespace UI.WebSesamo
             {
                 if(usr.Contraseña==txtContraseña.Text) 
                 {
+                    Session["usrActual"] = usr;
                     if (usr.Tipo == "inquilino")
-                    {
-                        Session["usrActual"] = usr;
+                    {                        
                         if (edfLogic.ContarEdificios(usr.NombreUsuario) < 2)
                         {
                             Session["edificioActual"] = edfLogic.GetOnexUsuario(usr.NombreUsuario);
@@ -54,7 +54,7 @@ namespace UI.WebSesamo
                     }
                     else if (usr.Tipo == "inmobiliaria")
                     {
-
+                        Server.Transfer("MenuInmobiliaria.aspx");
                     }
                     
                 }

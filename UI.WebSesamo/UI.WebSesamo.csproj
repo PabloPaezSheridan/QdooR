@@ -77,6 +77,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="InquilinosInmobiliaria.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -88,6 +89,7 @@
     <Content Include="InteraccionDb.asmx" />
     <Content Include="ListadoEdificios.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="MenuInmobiliaria.aspx" />
     <Content Include="MisLlaves.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -136,6 +138,13 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InquilinosInmobiliaria.aspx.cs">
+      <DependentUpon>InquilinosInmobiliaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InquilinosInmobiliaria.aspx.designer.cs">
+      <DependentUpon>InquilinosInmobiliaria.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CrearLlave.aspx.cs">
       <DependentUpon>CrearLlave.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -167,6 +176,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuInmobiliaria.aspx.cs">
+      <DependentUpon>MenuInmobiliaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuInmobiliaria.aspx.designer.cs">
+      <DependentUpon>MenuInmobiliaria.aspx</DependentUpon>
     </Compile>
     <Compile Include="MisLlaves.aspx.cs">
       <DependentUpon>MisLlaves.aspx</DependentUpon>

@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-using System.Globalization;
 using Business.Entities;
 using Business.Logic;
 
@@ -22,8 +21,17 @@ namespace UI.WebSesamo
             if (Session["usrActual"] != null)
             {
                 usrActual = (Usuario)Session["usrActual"];
-                edificioActual = (Edificio)Session["edificioActual"];
-                LoadGrid();
+                
+                if(usrActual.Tipo == "inquilino")
+                {
+                    edificioActual = (Edificio)Session["edificioActual"];
+                    LoadGrid();
+                }
+                else
+                {
+                    Server.Transfer("Login.aspx");
+                }
+
             }
             else
             {

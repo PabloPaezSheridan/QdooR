@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    class Inmobiliaria : BusinessEntity
+    public class Inmobiliaria : BusinessEntity
     {
         public Int64 Cuit { get; set; }
 

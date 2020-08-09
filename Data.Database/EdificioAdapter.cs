@@ -130,5 +130,32 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
-	}
+
+        public DataTable GetEdificiosxInmobiliaria(Inmobiliaria inmActual)
+        {
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdEdificio = new SqlCommand("select e.idEdificio idEdificio, Concat(e.denominacion,' , ', e.calle, ' , ' ,e.nroCalle) concatenacion from Edificios e where e.cuit = @cuit", sqlConn);
+                cmdEdificio.Parameters.Add("@cuit", SqlDbType.BigInt).Value = inmActual.Cuit;
+
+                SqlDataAdapter adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = cmdEdificio;
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+                return tabla;
+
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar los edificios de las inmobiliarias" + Ex.Message, Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
+    }
 }

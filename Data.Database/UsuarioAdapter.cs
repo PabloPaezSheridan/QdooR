@@ -32,6 +32,7 @@ namespace Data.Database
                     usr.Tipo = (string)drUsr["tipo"];
                     usr.Email = (string)drUsr["email"];
                     usr.Estado = (string)drUsr["estado"];
+                    usr.Cuit = (Int64)drUsr["cuit"];
 					
 				}
 				drUsr.Close();
@@ -83,5 +84,32 @@ namespace Data.Database
             }
             return usr;
         }
-    }
+
+        public DataTable GetallxEdificio(int idEdificio)
+        {
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdUsuarios = new SqlCommand("select u.nombreUsuario nombreUsuario, u.nombreyapellido nombreyApellido, u.celular celular, u.email, email from Usuarios u inner join UsuariosEdificios ue on ue.nombreUsuario = u.nombreUsuario where ue.idEdificio = @idEdificio ", sqlConn);
+                cmdUsuarios.Parameters.Add("@idEdificio", SqlDbType.Int).Value = idEdificio;
+
+                SqlDataAdapter adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = cmdUsuarios;
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+                return tabla;
+
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar los edificios de las inmobiliarias" + Ex.Message, Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
+    } 
 }

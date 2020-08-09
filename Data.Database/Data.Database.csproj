@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Adapter.cs" />
     <Compile Include="EdificioAdapter.cs" />
+    <Compile Include="InmobiliariaAdapter.cs" />
     <Compile Include="LlaveAdapter.cs" />
     <Compile Include="LlaveActivadaAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
