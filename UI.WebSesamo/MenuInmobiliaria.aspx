@@ -26,6 +26,16 @@
         .auto-style3 {
             text-align: center;
         }
+                .center{
+    width:600px;
+    margin-left:auto;
+    margin-right:auto;
+        }
+        .auto-style4 {
+            width: 408px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
 </head>
 <body>
@@ -41,13 +51,15 @@
                 <asp:Label ID="lblusr" runat="server" ForeColor="#999999"></asp:Label>
             </h3>
         </div>
-        <asp:Panel ID="Panel1" runat="server">
-            <asp:Button ID="btnAlta" runat="server" Text="Alta Inquilino" OnClick="btnAlta_Click" />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnBaja" runat="server" Text="Baja Inquilino" OnClick="btnBaja_Click" />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnAccesos" runat="server" OnClick="btnAccesos_Click" Text="Ver Accesos" />
-        </asp:Panel>
+        <div class="auto-style4">
+            <asp:Panel ID="Panel1" runat="server">
+                <asp:Button ID="btnAlta" runat="server" Text="Alta Inquilino" OnClick="btnAlta_Click" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btnBaja" runat="server" Text="Baja Inquilino" OnClick="btnBaja_Click" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btnAccesos" runat="server" OnClick="btnAccesos_Click" Text="Ver Accesos" />
+            </asp:Panel>
+        </div>
     </form>
 </body>
 </html>

@@ -26,13 +26,17 @@ namespace Data.Database
                     usr.NombreyApellido= (string)drUsr["nombreyapellido"];
                     if(drUsr["celular"] != null)
                     {
-                        usr.Celular = (Int64)drUsr["celular"];
+                        usr.Celular = (long)drUsr["celular"];
                     }
 					usr.Contraseña = (string)drUsr["contraseña"];
                     usr.Tipo = (string)drUsr["tipo"];
                     usr.Email = (string)drUsr["email"];
                     usr.Estado = (string)drUsr["estado"];
-                    usr.Cuit = (Int64)drUsr["cuit"];
+                    if (drUsr["cuit"] != null)
+                    {
+                        usr.Cuit = (long)drUsr["cuit"];
+                    }
+                   
 					
 				}
 				drUsr.Close();

@@ -25,7 +25,12 @@ namespace UI.WebSesamo
 
                 if (usrActual.Tipo == "inmobiliaria")
                 {
-                    LoadDropDownList();
+                    if (!this.IsPostBack)
+                    {
+                        this.LoadDropDownList();
+                        this.LoadGrid();
+                    }
+
                 }
                 else
                 {
@@ -39,7 +44,7 @@ namespace UI.WebSesamo
             }
         }
 
-        public void LoadDropDownList()
+        protected void LoadDropDownList()
         {
             EdificioLogic el = new EdificioLogic();
             DataTable tabla = el.GetEdificiosxInmobiliaria(inmActual);
@@ -47,7 +52,6 @@ namespace UI.WebSesamo
             this.ddlEdificiosxInmobiliaria.DataValueField = tabla.Columns["idEdificio"].ToString();
             this.ddlEdificiosxInmobiliaria.DataSource = tabla;
             this.ddlEdificiosxInmobiliaria.DataBind();
-            this.LoadGrid();
         }
 
         public void LoadGrid()
@@ -62,6 +66,20 @@ namespace UI.WebSesamo
         protected void ddlEdificiosxInmobiliaria_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.LoadGrid();
+        }
+
+        protected void gvInquilinosxEdificio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UsuarioLogic ul = new UsuarioLogic();
+            string nombreUsuario = gvInquilinosxEdificio.DataKeys[gvInquilinosxEdificio.SelectedRow.RowIndex]["nombreUsuario"].ToString();
+            Usuario InquilinoActual = ul.GetOne(nombreUsuario);
+            this.txtNombreUsuario.Text = InquilinoActual.NombreUsuario;
+            this.txtNombreApellido.Text = InquilinoActual.NombreyApellido;
+            this.txtEmail.Text = InquilinoActual.Email;
+            this.txtContraseña.Text = InquilinoActual.Contraseña;
+            this.txtCelular.Text = InquilinoActual.Celular.ToString();
+            this.panelCampos.Visible = true;
+            this.panelAcciones.Visible = true;
         }
     }
 }
