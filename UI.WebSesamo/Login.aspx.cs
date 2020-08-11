@@ -39,7 +39,7 @@ namespace UI.WebSesamo
                 if(usr.Contraseña==txtContraseña.Text) 
                 {
                     Session["usrActual"] = usr;
-                    if (usr.Tipo == "inquilino")
+                    if (usr.Tipo == "inquilino" && usr.Estado == "habilitado")
                     {                        
                         if (edfLogic.ContarEdificios(usr.NombreUsuario) < 2)
                         {

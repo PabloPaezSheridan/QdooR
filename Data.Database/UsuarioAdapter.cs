@@ -124,14 +124,15 @@ namespace Data.Database
             }
         }
 
-        public void bajaUsuarioxInmobiliaria(string NombreUsuario)
+        public void bajaUsuarioxInmobiliaria(string NombreUsuario, int idEdificio)
         {
             Usuario usuario = new Usuario();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdUsuario = new SqlCommand("Delete from usuariosEdificios where nombreUsuario = @nombreUsuario ", sqlConn);
+                SqlCommand cmdUsuario = new SqlCommand("Delete from usuariosEdificios where nombreUsuario = @nombreUsuario and idEdificio = @idEdificio", sqlConn);
                 cmdUsuario.Parameters.Add("@nombreUsuario", SqlDbType.VarChar, 50).Value = NombreUsuario;
+                cmdUsuario.Parameters.Add("@idEdificio", SqlDbType.Int).Value = idEdificio;
                 cmdUsuario.ExecuteNonQuery();
 
             }

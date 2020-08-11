@@ -130,7 +130,7 @@ namespace UI.WebSesamo
             UsuarioLogic ul = new UsuarioLogic();
             if (accion == "eliminar")
             {
-                ul.bajaUsuarioxInmobiliaria(this.txtNombreUsuario.Text);
+                ul.bajaUsuarioxInmobiliaria(this.txtNombreUsuario.Text, Int32.Parse(ddlEdificiosxInmobiliaria.SelectedValue));
 
             }
             else if(accion == "editar")

@@ -41,9 +41,9 @@ namespace Business.Logic
             UsuarioData.Update(usr, nombreUsuario, FechaFomateada(ahora));
         }
 
-        public void bajaUsuarioxInmobiliaria(string nombreUsuario)
+        public void bajaUsuarioxInmobiliaria(string nombreUsuario, int idEdificio)
         {
-            UsuarioData.bajaUsuarioxInmobiliaria(nombreUsuario);
+            UsuarioData.bajaUsuarioxInmobiliaria(nombreUsuario, idEdificio);
         }
 
         private DateTime FechaFomateada(DateTime fechaOriginal)
