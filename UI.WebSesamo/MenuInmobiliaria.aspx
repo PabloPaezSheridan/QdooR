@@ -32,9 +32,10 @@
     margin-right:auto;
         }
         .auto-style4 {
-            width: 408px;
+            width: 536px;
             margin-left: auto;
             margin-right: auto;
+            height: 42px;
         }
     </style>
 </head>
@@ -52,12 +53,12 @@
             </h3>
         </div>
         <div class="auto-style4">
-            <asp:Panel ID="Panel1" runat="server">
-                <asp:Button ID="btnAlta" runat="server" Text="Alta Inquilino" OnClick="btnAlta_Click" />
+            <asp:Panel ID="Panel1" runat="server" Height="46px" Width="537px">
+                <asp:Button ID="btnAlta" runat="server" Text="Alta Inquilino" OnClick="btnAlta_Click" Height="36px" Width="159px" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btnBaja" runat="server" Text="Baja Inquilino" OnClick="btnBaja_Click" />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btnAccesos" runat="server" OnClick="btnAccesos_Click" Text="Ver Accesos" />
+                <asp:Button ID="btnBaja" runat="server" Text="Baja/Modificacion Inquilino" OnClick="btnBaja_Click" Height="36px" Width="164px" />
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btnAccesos" runat="server" OnClick="btnAccesos_Click" Text="Ver Accesos" Height="36px" Width="159px" />
             </asp:Panel>
         </div>
     </form>

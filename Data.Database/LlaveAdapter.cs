@@ -143,7 +143,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdLlave = new SqlCommand("select ll.fechayHoraCreacion fechorCre,case  when ll.fechayHoraCaducacion IS NULL then 'Sin especificar' else  CONVERT(varchar, getdate(), 1) end fechorCad , case ll.desechable  when '1' then 'Desechable' when '0' then 'No Desechable'  end as desechable from llaves ll where nombreUsuario = @nombreUsuario and idEdificio = @idEdificio", sqlConn);
+                SqlCommand cmdLlave = new SqlCommand("select u.nombreUsuario nombreUsuario, u.nombreyapellido nombreyApellido,u.celular celular, u.email email from Usuarios u inner join UsuariosEdificios ue on ue.nombreUsuario = u.nombreUsuario where ue.idEdificio = @idEdificio", sqlConn);
                 cmdLlave.Parameters.Add("@idEdificio", SqlDbType.Int).Value = edificio.IdEdificio;
                 cmdLlave.Parameters.Add("@nombreUsuario", SqlDbType.VarChar, 50).Value = usr.NombreUsuario;
 
