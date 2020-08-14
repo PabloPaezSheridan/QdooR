@@ -63,9 +63,11 @@ namespace UI.WebSesamo
             txtEmail.Text = "";
             txtNombreApellido.Text = "";
             txtNombreUsuario.Text = "";
+            txtDpto.Text = "";
             this.panelCampos.Visible = true;
             this.panelConfirmar.Visible = true;
             this.lblexito.Visible = false;
+            this.lblWarnNombreUsuario.Visible = false;
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
@@ -79,7 +81,7 @@ namespace UI.WebSesamo
             UsuarioLogic ul = new UsuarioLogic();
             EdificioLogic el = new EdificioLogic();
 
-            if (ul.GetOne(txtNombreUsuario.Text) != null)
+            if (ul.GetOne(txtNombreUsuario.Text).NombreUsuario == null)
             {
                 if (txtCelular.Text == "")
                 {
@@ -106,6 +108,12 @@ namespace UI.WebSesamo
             else
             {
                 this.lblWarnNombreUsuario.Visible = true;
+                txtCelular.Text = "";
+                txtContraseña.Text = "";
+                txtEmail.Text = "";
+                txtNombreApellido.Text = "";
+                txtNombreUsuario.Text = "";
+                txtDpto.Text = "";
             }
         }
     }

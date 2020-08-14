@@ -31,7 +31,7 @@
     margin-right:auto;
         }
         .auto-style4 {
-            width: 213px;
+            width: 251px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -59,9 +59,9 @@
 			</h1>
         </div>
         <div class="auto-style4">
-            <asp:Panel ID="Panel1" runat="server" Width="213px">
-                <asp:Label runat="server" Text="Seleccion edificio: " ID="Label1"></asp:Label>
-                <asp:DropDownList ID="ddlEdificiosxInmobiliaria" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEdificiosxInmobiliaria_SelectedIndexChanged">
+            <asp:Panel ID="Panel1" runat="server" Width="277px">
+                <asp:Label runat="server" Text="Edificio:  " ID="Label1"></asp:Label>
+                <asp:DropDownList ID="ddlEdificiosxInmobiliaria" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEdificiosxInmobiliaria_SelectedIndexChanged" Height="35px" Width="197px">
                 </asp:DropDownList>
                 <br />
                 <br />
