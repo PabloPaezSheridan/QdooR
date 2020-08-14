@@ -35,15 +35,20 @@ namespace Business.Logic
             return UsuarioData.GetallxEdificio(IdEdificio);
         }
 
-        public void Update(Usuario usr, string nombreUsuario, DateTime ahora)
+        public void Update(Usuario usr, string nombreEditor, DateTime ahora)
         {
 
-            UsuarioData.Update(usr, nombreUsuario, FechaFomateada(ahora));
+            UsuarioData.Update(usr, nombreEditor, FechaFomateada(ahora));
         }
 
         public void bajaUsuarioxInmobiliaria(string nombreUsuario, int idEdificio)
         {
             UsuarioData.bajaUsuarioxInmobiliaria(nombreUsuario, idEdificio);
+        }
+
+        public void Insert(Usuario usr, string nombreEditor, DateTime ahora)
+        {
+            UsuarioData.Insert(usr, nombreEditor, FechaFomateada(ahora));
         }
 
         private DateTime FechaFomateada(DateTime fechaOriginal)

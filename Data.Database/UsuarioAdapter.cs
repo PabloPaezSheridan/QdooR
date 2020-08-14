@@ -193,5 +193,50 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
+
+        public void Insert(Usuario usuario, string nombreUsuario, DateTime fechayHoraEdicion)
+        {
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdUsuario = new SqlCommand("insert into Usuarios (nombreUsuario, contraseña, nombreyapellido, estado, celular, cuit, tipo, email, nombreEditor, fechayHoraEdicion) values (@nombreUsuario, @contraseña, @nombreyapellido, @estado, @celular, @cuit, @tipo, @email, @nombreEditor, @fechayHoraEdicion)", sqlConn);
+
+                cmdUsuario.Parameters.Add("@nombreUsuario", SqlDbType.VarChar).Value = usuario.NombreUsuario;
+                cmdUsuario.Parameters.Add("@contraseña", SqlDbType.VarChar).Value = usuario.Contraseña;
+                cmdUsuario.Parameters.Add("@nombreyapellido", SqlDbType.VarChar).Value = usuario.NombreyApellido;
+                cmdUsuario.Parameters.Add("@estado", SqlDbType.VarChar).Value = usuario.Estado;
+                if (usuario.Celular == null)
+                {
+                    cmdUsuario.Parameters.Add("@celular", SqlDbType.BigInt).Value = DBNull.Value;
+                }
+                else
+                {
+                    cmdUsuario.Parameters.Add("@celular", SqlDbType.BigInt).Value = usuario.Celular;
+                }
+
+                if (usuario.Cuit == null)
+                {
+                    cmdUsuario.Parameters.Add("@cuit", SqlDbType.BigInt).Value = DBNull.Value;
+                }
+                else
+                {
+                    cmdUsuario.Parameters.Add("@cuit", SqlDbType.BigInt).Value = usuario.Cuit;
+                }
+                cmdUsuario.Parameters.Add("@tipo", SqlDbType.VarChar).Value = usuario.Tipo;
+                cmdUsuario.Parameters.Add("@email", SqlDbType.VarChar).Value = usuario.Email;
+                cmdUsuario.Parameters.Add("@nombreEditor", SqlDbType.VarChar).Value = nombreUsuario;
+                cmdUsuario.Parameters.Add("@fechayHoraEdicion", SqlDbType.DateTime).Value = fechayHoraEdicion;
+                cmdUsuario.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al insertar el usuario", ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
     } 
 }

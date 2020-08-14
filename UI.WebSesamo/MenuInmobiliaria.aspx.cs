@@ -36,7 +36,7 @@ namespace UI.WebSesamo
 
         protected void btnAlta_Click(object sender, EventArgs e)
         {
-
+            Server.Transfer("AltaInquilino.aspx");
         }
 
         protected void btnBaja_Click(object sender, EventArgs e)

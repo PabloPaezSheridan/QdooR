@@ -157,5 +157,29 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
+
+        public void InsertUsuarioEdificio(int IdEdificio, string nombreUsuario, string Dpto)
+        {
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdUsuario = new SqlCommand("insert into UsuariosEdificios (nombreUsuario, idEdificio, departamento) values (@nombreUsuario, @idEdificio, @dpto)", sqlConn);
+
+                cmdUsuario.Parameters.Add("@nombreUsuario", SqlDbType.VarChar).Value = nombreUsuario;
+                cmdUsuario.Parameters.Add("@idEdificio", SqlDbType.Int).Value = IdEdificio;
+                cmdUsuario.Parameters.Add("@dpto", SqlDbType.VarChar).Value = Dpto;
+               
+                cmdUsuario.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al insertar el registro en UsuariosEdificios", ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
     }
 }

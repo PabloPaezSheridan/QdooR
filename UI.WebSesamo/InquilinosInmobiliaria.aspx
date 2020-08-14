@@ -27,7 +27,7 @@
         }
 
         .auto-style4 {
-            width: 376px;
+            width: 521px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -81,7 +81,7 @@
                 <br />
                 <br />
                 <div class="auto-style4">
-                    <asp:GridView ID="gvInquilinosxEdificio" runat="server" AutoGenerateColumns="False" DataKeyNames="nombreUsuario" CssClass="auto-style5" OnSelectedIndexChanged="gvInquilinosxEdificio_SelectedIndexChanged">
+                    <asp:GridView ID="gvInquilinosxEdificio" runat="server" AutoGenerateColumns="False" DataKeyNames="nombreUsuario" CssClass="auto-style5" OnSelectedIndexChanged="gvInquilinosxEdificio_SelectedIndexChanged" Width="517px">
                         <Columns>
                             <asp:BoundField DataField="nombreUsuario" Visible="False" />
                             <asp:BoundField DataField="nombreyApellido" HeaderText="Nombre y Apellido" />
@@ -98,14 +98,13 @@
 
              
          </div>
-        <br />
         <asp:Panel ID="panelCampos" runat="server" Visible="False">
             <div class="auto-style10">
                 <asp:Label ID="Label1" runat="server" Text="Nombre Usuario: "></asp:Label>
                 <asp:TextBox ID="txtNombreUsuario" runat="server" Enabled="False"></asp:TextBox>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="Label2" runat="server" Text="Email: "></asp:Label>
-                <asp:TextBox ID="txtEmail" runat="server" Enabled="False" Height="22px"></asp:TextBox>
+                <asp:TextBox ID="txtEmail" runat="server" Enabled="False" Height="22px" TextMode="Email"></asp:TextBox>
                 <br />
                 <br />
                 <asp:Label runat="server" Text="Nombre y Apellido: "></asp:Label>
@@ -126,6 +125,7 @@
                 <br />
             </div>
         </asp:Panel>
+        <br />
         <asp:Panel ID="panelAcciones" runat="server" Visible="False">
             <div class="auto-style7">
                 <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />

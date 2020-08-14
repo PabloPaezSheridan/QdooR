@@ -44,6 +44,11 @@ namespace Business.Logic
         {
             return EdificioData.GetEdificiosxInmobiliaria(inmobiliaria);
         }
+
+        public void InsertUsuarioEdificio(int IdEdificio, string NombreUsuario, string Dpto)
+        {
+            EdificioData.InsertUsuarioEdificio(IdEdificio, NombreUsuario, Dpto);
+        }
 		
 	}
 }
