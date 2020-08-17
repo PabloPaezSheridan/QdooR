@@ -6,65 +6,45 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
     <title></title>
-    <style type="text/css">
-        .auto-style2 {
-            color: #FF0000;
-        }
-        .auto-style4 {
-            text-align: center;
-        }
-        .auto-style6 {
-            text-align: center;
-            margin-left: 40px;
-        }
-        .auto-style7 {
-            text-align: center;
-            margin-left: 40px;
-            height: 82px;
-        }
-        .auto-style9 {
-            text-align: center;
-            margin-left: 40px;
-            height: 48px;
-        }
-        .auto-style10 {
-            color: #009999;
-        }
-    </style>
+
    
 </head>
-<body>
-    <form id="form1" runat="server">
-        <h1 class="auto-style9">&nbsp; <span class="auto-style10">Inicio de Sesión</span></h1>
-        <div class="auto-style4">
-            <p class="auto-style7">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<body  class="row justify-content-center align-items-center ">
+   <div class="col-sm-4 ">
+    <form id="form1" runat="server" >
+        
+            <h1><span>Inicio de Sesión</span></h1>
+        
+           
             <br />
-                <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="lblWarnNombreUsuario" runat="server" CssClass="auto-style2" Text=" Ingreso mal el nombre de usario" Visible="False" Font-Size="Small"></asp:Label>
-            </strong>
-           <br>
-            <asp:Label ID="lblNombreUsuario" runat="server" Text="Usuario"></asp:Label>
- &nbsp;&nbsp;
- <asp:TextBox ID="txtNombreUsuario" runat="server" BorderColor="#999999" BorderStyle="Solid" Width="150px"></asp:TextBox>
-      
-            <br /></p>
-            <p class="auto-style7">
-                &nbsp;<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="lblWarningContraseña" runat="server" CssClass="auto-style2" Text=" Ingresó mal la Contraseña" Visible="False" Font-Size="Small"></asp:Label>
+                <strong>
+                     <asp:Label ID="lblWarnNombreUsuario" runat="server" Text=" Ingreso mal el nombre de usario" Visible="False" Font-Size="Small"></asp:Label>
+                </strong>
+               <br>
+            <div class="form-group">
+                 <asp:Label ID="lblNombreUsuario" runat="server" Text="Usuario" ></asp:Label>
+                 <asp:TextBox ID="txtNombreUsuario" runat="server"  class="form-control" type="text"  Width="290px"></asp:TextBox>
+            </div>
+            <br />
+           
+                <strong>
+            <asp:Label ID="lblWarningContraseña" runat="server" Text=" Ingresó mal la Contraseña" Visible="False" Font-Size="Small"></asp:Label>
             </strong>
         
             <br />
-            <asp:Label ID="lblContraseña" runat="server" Text="Contraseña"></asp:Label>
-&nbsp; <asp:TextBox ID="txtContraseña" runat="server" BorderColor="#999999" BorderStyle="Solid" TextMode="Password" Width="141px"></asp:TextBox>
-            </p>
-        </div>
-        <p class="auto-style6">
-            <asp:LinkButton ID="btnLogin" runat="server" BorderStyle="Solid" OnClick="btnLogin_Click" Width="204px">LOGIN</asp:LinkButton>
-        </p>
+            <div class="form-group">
+                <asp:Label ID="lblContraseña" runat="server" Text="Contraseña"></asp:Label>
+                <asp:TextBox ID="txtContraseña" runat="server" class="form-control"  type="password"  TextMode="Password" Width="290px"></asp:TextBox>
+            </div>
+                
+        
+        <br />
+        
+            <asp:LinkButton ID="btnLogin" runat="server" Class="btn btn-primary" BorderStyle="Solid" OnClick="btnLogin_Click" Width="290px">LOGIN</asp:LinkButton>
+     
     </form>
+ </div>
 </body>
 </html>
