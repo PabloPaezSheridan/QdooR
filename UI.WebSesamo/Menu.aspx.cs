@@ -10,7 +10,7 @@ using Business.Logic;
 
 namespace UI.WebSesamo
 {
-    public partial class MenuInmobiliaria : System.Web.UI.Page
+    public partial class Menu : System.Web.UI.Page
     {
         static Usuario usrActual = new Usuario();
 
@@ -34,19 +34,6 @@ namespace UI.WebSesamo
             }
         }
 
-        protected void btnAlta_Click(object sender, EventArgs e)
-        {
-            Server.Transfer("AltaInquilino.aspx");
-        }
-
-        protected void btnBaja_Click(object sender, EventArgs e)
-        {
-            Server.Transfer("InquilinosInmobiliaria.aspx");
-        }
-
-        protected void btnAccesos_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

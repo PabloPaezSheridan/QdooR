@@ -1,11 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AltaInquilino.aspx.cs" Inherits="UI.WebSesamo.AltaInquilino" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-
-    <title></title>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Alta.aspx.cs" Inherits="UI.WebSesamo.Alta" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+     <title></title>
     <style type="text/css">
 
 
@@ -51,8 +46,8 @@
             font-size: medium;
         }
     </style>
-</head>
-<body>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
     <form id="form1" runat="server">
         <div class="auto-style3">
             <h1>
@@ -62,7 +57,7 @@
         <div class="auto-style4">
             <asp:Panel ID="Panel1" runat="server" Width="277px">
                 <asp:Label runat="server" Text="Edificio:  " ID="Label1"></asp:Label>
-                <asp:DropDownList ID="ddlEdificiosxInmobiliaria" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEdificiosxInmobiliaria_SelectedIndexChanged" Height="35px" Width="197px">
+                <asp:DropDownList ID="ddlEdificiosxInmobiliaria" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEdificiosxInmobiliaria_SelectedIndexChanged" class="btn btn-secondary dropdown-toggle">
                 </asp:DropDownList>
                 <br />
                 <br />
@@ -118,5 +113,4 @@
             </asp:Panel>
         </div>
     </form>
-</body>
-</html>
+</asp:Content>

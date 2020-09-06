@@ -1,13 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InquilinosInmobiliaria.aspx.cs" Inherits="UI.WebSesamo.InquilinosInmobiliaria" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Inquilinos.aspx.cs" Inherits="UI.WebSesamo.Inquilinos" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title></title>
     <style type="text/css">
-
-
 		.auto-style2 {
 			color: #009999;
 		}
@@ -63,8 +57,8 @@
         }
 
         </style>
-</head>
-<body>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
     <form id="form1" runat="server">
         <div>
             <h1 class="auto-style6">
@@ -76,7 +70,7 @@
         <div class="center">
             <asp:Panel ID="Panel1" runat="server" Width="594px">
                 <asp:Label runat="server" Text="Seleccion edificio: "></asp:Label>
-                <asp:DropDownList ID="ddlEdificiosxInmobiliaria" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEdificiosxInmobiliaria_SelectedIndexChanged">
+                <asp:DropDownList ID="ddlEdificiosxInmobiliaria" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEdificiosxInmobiliaria_SelectedIndexChanged" class="btn btn-secondary dropdown-toggle">
              </asp:DropDownList>
                 <br />
                 <br />
@@ -143,5 +137,4 @@
             </asp:Panel>
         </div>
     </form>
-</body>
-</html>
+</asp:Content>

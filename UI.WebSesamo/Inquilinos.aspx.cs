@@ -9,9 +9,10 @@ using Business.Entities;
 using Business.Logic;
 using System.Data;
 
+
 namespace UI.WebSesamo
 {
-    public partial class InquilinosInmobiliaria : System.Web.UI.Page
+    public partial class Inquilinos : System.Web.UI.Page
     {
         static Usuario usrActual = new Usuario();
         static Inmobiliaria inmActual = new Inmobiliaria();
@@ -133,7 +134,7 @@ namespace UI.WebSesamo
                 ul.bajaUsuarioxInmobiliaria(this.txtNombreUsuario.Text, Int32.Parse(ddlEdificiosxInmobiliaria.SelectedValue));
 
             }
-            else if(accion == "editar")
+            else if (accion == "editar")
             {
                 if (txtCelular.Text == "")
                 {
@@ -142,7 +143,7 @@ namespace UI.WebSesamo
                 else
                 {
                     InquilinoActual.Celular = Int64.Parse(txtCelular.Text);
-                }          
+                }
                 InquilinoActual.Contraseña = txtContraseña.Text;
                 InquilinoActual.Email = txtEmail.Text;
                 InquilinoActual.Estado = ddlEstado.SelectedValue.ToString();

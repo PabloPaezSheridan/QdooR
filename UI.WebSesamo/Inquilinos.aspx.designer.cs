@@ -10,7 +10,7 @@
 namespace UI.WebSesamo {
     
     
-    public partial class AltaInquilino {
+    public partial class Inquilinos {
         
         /// <summary>
         /// form1 control.
@@ -40,15 +40,6 @@ namespace UI.WebSesamo {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
         /// ddlEdificiosxInmobiliaria control.
         /// </summary>
         /// <remarks>
@@ -58,13 +49,13 @@ namespace UI.WebSesamo {
         protected global::System.Web.UI.WebControls.DropDownList ddlEdificiosxInmobiliaria;
         
         /// <summary>
-        /// lblexito control.
+        /// gvInquilinosxEdificio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblexito;
+        protected global::System.Web.UI.WebControls.GridView gvInquilinosxEdificio;
         
         /// <summary>
         /// panelCampos control.
@@ -76,22 +67,13 @@ namespace UI.WebSesamo {
         protected global::System.Web.UI.WebControls.Panel panelCampos;
         
         /// <summary>
-        /// lblWarnNombreUsuario control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWarnNombreUsuario;
-        
-        /// <summary>
-        /// Label6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// txtNombreUsuario control.
@@ -148,22 +130,22 @@ namespace UI.WebSesamo {
         protected global::System.Web.UI.WebControls.TextBox txtCelular;
         
         /// <summary>
-        /// Label7 control.
+        /// Label4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// txtDpto control.
+        /// txtContraseña control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDpto;
+        protected global::System.Web.UI.WebControls.TextBox txtContraseña;
         
         /// <summary>
         /// Label5 control.
@@ -184,22 +166,31 @@ namespace UI.WebSesamo {
         protected global::System.Web.UI.WebControls.DropDownList ddlEstado;
         
         /// <summary>
-        /// Label4 control.
+        /// panelAcciones control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Panel panelAcciones;
         
         /// <summary>
-        /// txtContraseña control.
+        /// btnEliminar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContraseña;
+        protected global::System.Web.UI.WebControls.Button btnEliminar;
+        
+        /// <summary>
+        /// btnEditar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditar;
         
         /// <summary>
         /// panelConfirmar control.

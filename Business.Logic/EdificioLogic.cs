@@ -45,6 +45,11 @@ namespace Business.Logic
             return EdificioData.GetEdificiosxInmobiliaria(inmobiliaria);
         }
 
+        public DataTable GetLlavesActivadasxEdificioyRango(int idEdificio, DateTime fini, DateTime ffin)
+        {
+            return EdificioData.GetLlavesActivadasxEdificioyRango(idEdificio, fini, ffin);
+        }
+
         public void InsertUsuarioEdificio(int IdEdificio, string NombreUsuario, string Dpto)
         {
             EdificioData.InsertUsuarioEdificio(IdEdificio, NombreUsuario, Dpto);

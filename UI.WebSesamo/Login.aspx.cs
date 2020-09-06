@@ -54,7 +54,7 @@ namespace UI.WebSesamo
                     }
                     else if (usr.Tipo == "inmobiliaria")
                     {
-                        Server.Transfer("MenuInmobiliaria.aspx");
+                        Server.Transfer("Menu.aspx");
                     }
                     
                 }
