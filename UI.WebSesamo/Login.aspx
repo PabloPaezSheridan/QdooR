@@ -12,7 +12,7 @@
    
 </head>
 <body  class="row justify-content-center align-items-center ">
-   <div class="col-sm-4 ">
+   <div class="col-sm-4">
     <form id="form1" runat="server" >
         
             <h1><span>Inicio de Sesión</span></h1>
