@@ -9,8 +9,8 @@
                 <h1 class="center"><span>Histórico de Accesos</span></h1>
                 <br />
                 <p class="center">
-                <asp:Label runat="server" Text="Edificio:  " ID="Label1" class="h5 label label-primary"></asp:Label>
-                <asp:DropDownList ID="ddlEdificiosxInmobiliaria" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEdificiosxInmobiliaria_SelectedIndexChanged" class="btn btn-secondary dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                <asp:Label runat="server" Text="Edificio:  " ID="Label1" class="h4 label label-primary"></asp:Label>
+                <asp:DropDownList ID="ddlEdificiosxInmobiliaria" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEdificiosxInmobiliaria_SelectedIndexChanged" class="btn btn-secondary btn-sm dropdown-toggle" aria-haspopup="true" aria-expanded="false">
                 </asp:DropDownList>
                 </p>
                 <br />
