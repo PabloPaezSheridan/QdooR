@@ -96,15 +96,6 @@ namespace UI.WebSesamo
         protected global::System.Web.UI.WebControls.LinkButton btnCrearLlave;
 
         /// <summary>
-        /// Control btnLogin.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnLogin;
-
-        /// <summary>
         /// Control LinkButton2.
         /// </summary>
         /// <remarks>
@@ -112,6 +103,15 @@ namespace UI.WebSesamo
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
+
+        /// <summary>
+        /// Control LinkButton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton;
 
         /// <summary>
         /// Control LinkButton1.

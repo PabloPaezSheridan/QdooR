@@ -15,81 +15,68 @@
 		.auto-style2 {
 			color: #009999;
 		}
-        footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: darkcyan;
+        #navbarToggleExternalContent a{
             color: white;
-            text-align: center;
-            align-content: center;
-            justify-content: center;
             text-decoration: none;
-        }
-        footer li {
-            width: auto;
-            margin: auto;
-        }
-        footer a {
-            text-decoration: none;
-            color: white;
         }
 		</style>
 </head>
 <body d-flex flex-column min-vh-100>
-        <form id="form1" runat="server">
-    <div class="container" style="display: flex;">
-            <div class="text-center" style="margin: auto;">
-            <div class="auto-style1">
-        	    <br />
-        	    <br />
-        	    <h1 class="text-center">
-				    <asp:Label ID="lblTitulo" runat="server" CssClass="auto-style2" Text="QdooR"></asp:Label>
-			    </h1>
-            </div>
-                <p class="text-center"></p>
-                <p class="text-center"></p>
-                <h4 class="text-center">
-				    <asp:Label ID="lblDesechable" runat="server" Text="Desechable"></asp:Label>
-				    <asp:CheckBox ID="chkDesechable" runat="server" AutoPostBack="True" Checked="True" OnCheckedChanged="chkDesechable_CheckedChanged" />
-			    </h4>
-                <p class="text-center"></p>
-                <h4>
-				    <asp:Label ID="lblDescripcion" runat="server" Text="Descripcion"></asp:Label>
-                    <asp:TextBox ID="txtDenomLlave" runat="server" Width="162px"></asp:TextBox>
-                </h4>
-                <p class="text-center"></p>
-			    <h4 class="text-center">
-				    <asp:Label ID="lblDuracion" runat="server" Enabled="False" Text="Duración"></asp:Label>
-				    <asp:DropDownList ID="ddlDuracion" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlDuracion_SelectedIndexChanged" Enabled="False">
-					    <asp:ListItem Selected="True" Value="360">5 Minutos</asp:ListItem>
-					    <asp:ListItem Value="900">15 Minutos</asp:ListItem>
-					    <asp:ListItem Value="86400">1 Dia</asp:ListItem>
-					    <asp:ListItem Value="604800">1 semana</asp:ListItem>
-				    </asp:DropDownList>
-			    </h4>
-                <p class="text-center"></p>
-                <p class="text-center">
-				    <asp:LinkButton ID="btnCrearLlave" Class="btn btn-primary" runat="server" BorderStyle="Solid" OnClick="btnCrearLlave_Click" Width="167px">Crear Llave</asp:LinkButton>
-                </p>
-		    </div>
-    </div>
-    <footer class="mt-auto">
-            <ul class="nav nav-pills nav-fill justify-content-center">
-                <li class="nav-item">
-                    <asp:LinkButton ID="btnLogin" Class="nav-link" runat="server" OnClick="btnLogin_Click">Login</asp:LinkButton>
-                </li>
-                <li class="nav-item">
-                    <asp:LinkButton ID="LinkButton2" Class="nav-link active" runat="server">
-                        Crear Llave
-                    </asp:LinkButton>
-                </li>
-                <li class="nav-item">
-                    <asp:LinkButton ID="LinkButton1" Class="nav-link" runat="server" OnClick="btnMisLlaves_Click">Mis Llaves</asp:LinkButton>
-                </li>
+    <form id="form1" runat="server">
+        <div class="container" style="display: flex;">
+                <div class="text-center card p-3 w-100" style="margin: auto; margin-top: 6rem">
+                <div class="auto-style1">
+        	        <br />
+        	        <br />
+        	        <h1 class="text-center">
+				        <asp:Label ID="lblTitulo" runat="server" CssClass="auto-style2" Text="QdooR"></asp:Label>
+			        </h1>
+                </div>
+                    <h4 class="text-center mt-5">
+				        <asp:Label ID="lblDesechable" runat="server" Text="Desechable"></asp:Label>
+				        <asp:CheckBox ID="chkDesechable" runat="server" AutoPostBack="True" Checked="True" OnCheckedChanged="chkDesechable_CheckedChanged" />
+			        </h4>
+                    <h4 class="mt-5">
+				        <asp:Label ID="lblDescripcion" runat="server" Text="Descripcion"></asp:Label>
+                        <asp:TextBox ID="txtDenomLlave" runat="server" Width="162px"></asp:TextBox>
+                    </h4>
+			        <h4 class="text-center mt-5">
+				        <asp:Label ID="lblDuracion" runat="server" Enabled="False" Text="Duración"></asp:Label>
+				        <asp:DropDownList ID="ddlDuracion" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlDuracion_SelectedIndexChanged" Enabled="False">
+					        <asp:ListItem Selected="True" Value="360">5 Minutos</asp:ListItem>
+					        <asp:ListItem Value="900">15 Minutos</asp:ListItem>
+					        <asp:ListItem Value="86400">1 Dia</asp:ListItem>
+					        <asp:ListItem Value="604800">1 semana</asp:ListItem>
+				        </asp:DropDownList>
+			        </h4>
+                    <div class="text-center mt-5">
+				        <asp:LinkButton ID="btnCrearLlave" Class="btn btn-primary btn-block" runat="server" BorderStyle="Solid" OnClick="btnCrearLlave_Click" Width="167px">Crear Llave</asp:LinkButton>
+                    </div>
+		        </div>
+        </div>
+        <nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <asp:LinkButton ID="LinkButton2" Class="nav-link active" runat="server">
+                    Crear Llave
+                </asp:LinkButton>
+              </li>
+              <li class="nav-item">
+                <asp:LinkButton ID="LinkButton" Class="nav-link" runat="server" OnClick="btnMisLlaves_Click">Mis Llaves</asp:LinkButton>
+              </li>
+              <li class="nav-item">
+                <asp:LinkButton ID="LinkButton1" Class="nav-link" runat="server" OnClick="btnLogin_Click">Cerrar Sesion</asp:LinkButton>
+              </li>
             </ul>
-    </footer>
-        </form>
+          </div>
+        </nav>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>
