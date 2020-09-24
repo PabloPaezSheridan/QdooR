@@ -10,7 +10,7 @@
 namespace UI.WebSesamo {
     
     
-    public partial class MenuInmobiliaria {
+    public partial class Historico {
         
         /// <summary>
         /// form1 control.
@@ -22,66 +22,66 @@ namespace UI.WebSesamo {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblTitulo control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitulo;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// lblInmobiliaria control.
+        /// ddlEdificiosxInmobiliaria control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblInmobiliaria;
+        protected global::System.Web.UI.WebControls.DropDownList ddlEdificiosxInmobiliaria;
         
         /// <summary>
-        /// lblusr control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblusr;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Panel1 control.
+        /// calInicio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.WebControls.Calendar calInicio;
         
         /// <summary>
-        /// btnAlta control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAlta;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// btnBaja control.
+        /// calFin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBaja;
+        protected global::System.Web.UI.WebControls.Calendar calFin;
         
         /// <summary>
-        /// btnAccesos control.
+        /// gdvHistorico control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAccesos;
+        protected global::System.Web.UI.WebControls.GridView gdvHistorico;
     }
 }

@@ -9,9 +9,10 @@ using Business.Entities;
 using Business.Logic;
 using System.Data;
 
+
 namespace UI.WebSesamo
 {
-    public partial class AltaInquilino : System.Web.UI.Page
+    public partial class Alta : System.Web.UI.Page
     {
         static Usuario usrActual = new Usuario();
         static Inmobiliaria inmActual = new Inmobiliaria();

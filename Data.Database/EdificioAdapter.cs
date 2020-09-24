@@ -158,6 +158,38 @@ namespace Data.Database
             }
         }
 
+        public DataTable GetLlavesActivadasxEdificioyRango(int idEdificio, DateTime fini, DateTime ffin)
+        {
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdEdificio = new SqlCommand("select u.nombreUsuario nombreUsuario, u.nombreyapellido nombreyapellido, u.email mail, u.celular celular, ue.departamento departamento, lla.fechayHoraActivacion fechayHoraAcceso" +
+                    " from Edificios e inner join UsuariosEdificios ue on ue.idEdificio = e.idEdificio inner join Usuarios u on u.nombreUsuario = ue.nombreUsuario inner join Llaves ll on ll.nombreUsuario = u.nombreUsuario inner join LlavesActivadas lla on lla.cadenaQr = ll.cadenaQr" +
+                    " where e.idEdificio = @idEdificio and lla.fechayHoraActivacion between @fini and @ffin", sqlConn);
+
+                cmdEdificio.Parameters.Add("@idEdificio", SqlDbType.Int).Value = idEdificio;
+                cmdEdificio.Parameters.Add("@fini", SqlDbType.DateTime).Value = fini;
+                cmdEdificio.Parameters.Add("@ffin", SqlDbType.DateTime).Value = ffin;
+
+                SqlDataAdapter adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = cmdEdificio;
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+                return tabla;
+
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar el numero de edificios" + Ex.Message, Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
+
         public void InsertUsuarioEdificio(int IdEdificio, string nombreUsuario, string Dpto)
         {
             try

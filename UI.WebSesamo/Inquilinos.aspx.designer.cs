@@ -10,7 +10,7 @@
 namespace UI.WebSesamo {
     
     
-    public partial class InquilinosInmobiliaria {
+    public partial class Inquilinos {
         
         /// <summary>
         /// form1 control.
