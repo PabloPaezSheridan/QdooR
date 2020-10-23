@@ -1,3 +1,4 @@
+const functions = require('firebase-functions');
 const express = require('express')
 const db = require('mssql')
 
@@ -9,11 +10,16 @@ const config = {
 }
 
 const app = express()
+const api = express()
 
 
-app.listen(8000, () => {
-  console.log("Server running in port 8000")
-})
+api.use("/", app)
+
+// app.listen(8000, () => {
+//   console.log("Server running in port 8000")
+// })
+
+app.get('/connect', (req, res) => res.send("Connected to server!"))
 
 app.get('/', (req, res) => {
   let Today = new Date()
@@ -32,7 +38,7 @@ app.get('/ingresar/:code/:edificio', (req, res) => {
     }
     let request = new db.Request()
     request.query(`Declare @resultado int
-                   Execute @resultado = validarIngresoBeta @code = '${req.params.code}', @idEdificio = ${parseInt(req.params.edificio)};
+                   Execute @resultado = validarIngreso @code = '${req.params.code}', @idEdificio = ${parseInt(req.params.edificio)};
                    Select @resultado`, (err, record) => {
       if (err) console.log(err)
       res.json(record["recordset"][0][""])
@@ -40,3 +46,13 @@ app.get('/ingresar/:code/:edificio', (req, res) => {
     // res.json([req.params.code, req.params.edificio])
   })
 })
+
+exports.api = functions.https.onRequest(api);
+
+// // Create and Deploy Your First Cloud Functions
+// // https://firebase.google.com/docs/functions/write-firebase-functions
+//
+// exports.helloWorld = functions.https.onRequest((request, response) => {
+//   functions.logger.info("Hello logs!", {structuredData: true});
+//   response.send("Hello from Firebase!");
+// });

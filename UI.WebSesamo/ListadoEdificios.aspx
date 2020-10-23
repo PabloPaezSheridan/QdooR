@@ -67,27 +67,26 @@ textarea {
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            <h1 class="auto-style2">
-                <asp:Label ID="Label1" runat="server" CssClass="auto-style3" ForeColor="#009999" Text="Edificios"></asp:Label>
-            </h1>
-        </div>
-        <div class="auto-style1">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:GridView ID="gvEdificiosxUsuario" runat="server" AutoGenerateColumns="False" DataKeyNames="idEdificio" OnSelectedIndexChanged="gvEdificiosxUsuario_SelectedIndexChanged" Width="319px">
-                <Columns>
-                    <asp:BoundField DataField="idEdificio" Visible="False" />
-                    <asp:BoundField DataField="denominacion" HeaderText="Nombre" />
-                    <asp:BoundField DataField="calle" HeaderText="Calle" />
-                    <asp:BoundField DataField="nroCalle" HeaderText="Número" />
-                    <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" ButtonType="Button" />
-                </Columns>
-                <HeaderStyle BackColor="#009999" />
-            </asp:GridView>
-
-             
+    <div class="container d-flex" style="display: flex !important; margin-top:10rem">
+        <form id="form1" runat="server" style="margin: auto;">
+            <div>
+                <h1 class="auto-style2">
+                    <asp:Label ID="Label1" runat="server" CssClass="auto-style3" ForeColor="#009999" Text="Edificios"></asp:Label>
+                </h1>
             </div>
-    </form>
+            <div class="auto-style1">
+                <asp:GridView ID="gvEdificiosxUsuario" runat="server" AutoGenerateColumns="False" DataKeyNames="idEdificio" OnSelectedIndexChanged="gvEdificiosxUsuario_SelectedIndexChanged" Width="319px">
+                    <Columns>
+                        <asp:BoundField DataField="idEdificio" Visible="False" />
+                        <asp:BoundField DataField="denominacion" HeaderText="Nombre" />
+                        <asp:BoundField DataField="calle" HeaderText="Calle" />
+                        <asp:BoundField DataField="nroCalle" HeaderText="Número" />
+                        <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" ButtonType="Button" />
+                    </Columns>
+                    <HeaderStyle BackColor="#009999" />
+                </asp:GridView>
+                </div>
+        </form>
+    </div>
 </body>
 </html>
