@@ -207,7 +207,7 @@ void loop()
       delay(6000);
       digitalWrite(A0,HIGH);
 
-    }
+    } else {Serial.println("NO!! SE ABRE LA PUERTA");}
       client.flush();
       client.stop();
       //times ++;
