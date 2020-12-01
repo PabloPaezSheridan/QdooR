@@ -82,10 +82,8 @@ namespace UI.WebSesamo
         protected string GenerarCadenaAleatoria(int longitud)
         {
             Guid miGuid = Guid.NewGuid();
-            string token = Convert.ToBase64String(miGuid.ToByteArray());
-            token = token.Replace("=", "").Replace("+", "");
+            string token = miGuid.ToString().Replace("-", string.Empty).Replace("=", "").Replace("+", "").Replace("/", "").Substring(0, longitud);
             return token;
-
         }
 
         protected void MostrarImagen(Bitmap qrCodeImage)
@@ -101,8 +99,8 @@ namespace UI.WebSesamo
         {
             Llave llave = new Llave();
             LlaveLogic llaveLogic = new LlaveLogic();
-
-            llave.CadenaQr = GenerarCadenaAleatoria(50);
+            //30 es el maximo numero de caracteres que puede generar con el actual método
+            llave.CadenaQr = GenerarCadenaAleatoria(30);
             llave.IdEdificio = edificioActual.IdEdificio;
             llave.NombreUsuario = usrActual.NombreUsuario;
             llave.fechayHoraCreacion = DateTime.Now;
