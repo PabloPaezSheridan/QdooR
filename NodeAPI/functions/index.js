@@ -38,7 +38,7 @@ app.get('/ingresar/:code/:edificio', (req, res) => {
     }
     let request = new db.Request()
     request.query(`Declare @resultado int
-                   Execute @resultado = validarIngreso @code = '${req.params.code}', @idEdificio = ${parseInt(req.params.edificio)};
+                   Execute @resultado = validarIngreso @cadenaQr = '${req.params.code}', @idEdificio = ${parseInt(req.params.edificio)};
                    Select @resultado`, (err, record) => {
       if (err) console.log(err)
       res.json(record["recordset"][0][""])

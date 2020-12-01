@@ -19,8 +19,16 @@ BEGIN
 
 	if (@fechayHoraCaducacion is not NULL and @fechayHoraCaducacion > GETDATE() and @habilitada = 1 and @desechable = 1)
 	begin
-		insert into LlavesActivadas (cadenaQr, fechayHoraActivacion) values (@cadenaQr, GETDATE())
-		return 1
+		select @cantidadAccesos = count(la.cadenaQr) from LlavesActivadas la where la.cadenaQr = @cadenaQr
+		if (@cantidadAccesos = 0)
+			begin
+				insert into LlavesActivadas (cadenaQr, fechayHoraActivacion) values (@cadenaQr, GETDATE())
+				return 1
+			end
+		else
+			begin
+				return 0
+			end
 	end
 	
 	else
