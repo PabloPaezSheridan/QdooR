@@ -16,16 +16,20 @@ namespace UI.WebSesamo
 {
     public partial class DetalleLlave : System.Web.UI.Page
     {
+        static Usuario usrActual = new Usuario();
         static Llave llaveActual = new Llave();
         static Edificio edificioActual = new Edificio();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (Session["usrActual"] != null && Session["llaveActual"] != null)
             {
+                usrActual = (Usuario)Session["usrActual"];
                 llaveActual = (Llave)Session["llaveActual"];
                 edificioActual = (Edificio)Session["edificioActual"];
                 LoadGrid();
+                lblNombre.Text = usrActual.NombreyApellido;
             }
             else
             {
@@ -71,9 +75,20 @@ namespace UI.WebSesamo
             MostrarImagen(qrCodeImage);
         }
 
+        protected void btnCrearLlave_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("CrearLlave.aspx");
+        }
+
         protected void btnMisLlaves_Click(object sender, EventArgs e)
         {
             Server.Transfer("MisLlaves.aspx");
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Server.Transfer("Login.aspx");
         }
     }
 }

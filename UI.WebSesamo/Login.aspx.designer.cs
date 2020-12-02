@@ -7,13 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace UI.WebSesamo
-{
-
-
-    public partial class Login
-    {
-
+namespace UI.WebSesamo {
+    
+    
+    public partial class Login {
+        
         /// <summary>
         /// Control form1.
         /// </summary>
@@ -22,7 +20,7 @@ namespace UI.WebSesamo
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// Control lblWarnNombreUsuario.
         /// </summary>
@@ -31,16 +29,7 @@ namespace UI.WebSesamo
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblWarnNombreUsuario;
-
-        /// <summary>
-        /// Control lblNombreUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
-
+        
         /// <summary>
         /// Control txtNombreUsuario.
         /// </summary>
@@ -49,7 +38,7 @@ namespace UI.WebSesamo
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombreUsuario;
-
+        
         /// <summary>
         /// Control lblWarningContraseña.
         /// </summary>
@@ -58,16 +47,7 @@ namespace UI.WebSesamo
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblWarningContraseña;
-
-        /// <summary>
-        /// Control lblContraseña.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContraseña;
-
+        
         /// <summary>
         /// Control txtContraseña.
         /// </summary>
@@ -76,7 +56,7 @@ namespace UI.WebSesamo
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtContraseña;
-
+        
         /// <summary>
         /// Control btnLogin.
         /// </summary>

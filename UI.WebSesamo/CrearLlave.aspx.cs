@@ -26,6 +26,8 @@ namespace UI.WebSesamo
             {
                 usrActual = (Usuario)Session["usrActual"];
                 edificioActual = (Edificio)Session["edificioActual"];
+                lblEdificio.Text = edificioActual.Denominacion;
+                lblNombre.Text = usrActual.NombreyApellido;
             }
             else
             {

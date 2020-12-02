@@ -26,6 +26,7 @@ namespace UI.WebSesamo
                 {
                     edificioActual = (Edificio)Session["edificioActual"];
                     LoadGrid();
+                    lblNombre.Text = usrActual.NombreyApellido;
                 }
                 else
                 {
@@ -63,6 +64,13 @@ namespace UI.WebSesamo
             string cadenaQr = gvLlavesxUsuario.DataKeys[gvLlavesxUsuario.SelectedRow.RowIndex]["cadenaQr"].ToString();
             Session["llaveActual"] = llaveLogic.GetOne(cadenaQr);
             Server.Transfer("DetalleLlave.aspx");
+        }
+
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Server.Transfer("Login.aspx");
         }
 
         //protected void gvGetLlavexUsuario_SelectedIndexChanged(object sender, EventArgs e)

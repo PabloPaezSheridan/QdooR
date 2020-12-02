@@ -10,7 +10,7 @@
             <br />
             <asp:Panel ID="Panel1" runat="server">
                 <div class="row justify-content-center">
-                    <h4><asp:Label runat="server" Text="Edificio:  " ID="Label1"></asp:Label></h4>
+                    <h4><asp:Label runat="server" Text="Edificio:" ID="Label1"></asp:Label>&nbsp;</h4>
                     <asp:DropDownList ID="ddlEdificiosxInmobiliaria" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEdificiosxInmobiliaria_SelectedIndexChanged" class="btn btn-secondary btn-sm dropdown-toggle">
                     </asp:DropDownList>
                     <br />

@@ -8,30 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
     <title></title>
-	<style type="text/css">
-		.auto-style1 {
-			text-align: center;
-		}
-		.auto-style2 {
-			color: #009999;
-		}
-        #navbarToggleExternalContent a{
-            color: white;
-            text-decoration: none;
-        }
-		</style>
+	
 </head>
 <body d-flex flex-column min-vh-100>
     <form id="form1" runat="server">
         <div class="container" style="display: flex;">
-                <div class="text-center card p-3 w-100" style="margin: auto; margin-top: 6rem">
-                <div class="auto-style1">
-        	        <br />
-        	        <br />
-        	        <h1 class="text-center">
-				        <asp:Label ID="lblTitulo" runat="server" CssClass="auto-style2" Text="QdooR"></asp:Label>
+                <div class="text-center p-3 w-100" style="margin: auto">
+                     <h4><asp:Label ID="lblEdificio" runat="server"></asp:Label></h4>
+                     <br />
+        	         <h1 class="text-center">
+				        <asp:Label ID="lblTitulo" runat="server" Text="QdooR" ForeColor="#009999"></asp:Label>
 			        </h1>
-                </div>
+                
                     <h4 class="text-center mt-5">
 				        <asp:Label ID="lblDesechable" runat="server" Text="Desechable"></asp:Label>
 				        <asp:CheckBox ID="chkDesechable" runat="server" AutoPostBack="True" Checked="True" OnCheckedChanged="chkDesechable_CheckedChanged" />
@@ -71,12 +59,15 @@
               <li class="nav-item">
                 <asp:LinkButton ID="LinkButton1" Class="nav-link" runat="server" OnClick="btnLogin_Click">Cerrar Sesion</asp:LinkButton>
               </li>
+              <li class="nav-item">
+                  <asp:Label ID="lblNombre" Class="nav-link disabled" runat="server"></asp:Label>
+              </li>
             </ul>
           </div>
         </nav>
     </form>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body>
 </html>
