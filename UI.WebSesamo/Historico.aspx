@@ -14,7 +14,7 @@
                 </asp:DropDownList>
                 </p>
                 <br />
-                <h3>Rango de fecha y hora del Historico</h3>
+                <h3>Rango de fecha del Historico</h3>
                 <div class="container">
                     <div class="row">
                         <div class="col">
@@ -30,7 +30,7 @@
             <br /> 
                 <div>
 
-                    <asp:GridView ID="gdvHistorico" runat="server" class="table table-responsive table-striped table-hover"  AutoGenerateColumns="False">
+                    <asp:GridView ID="gdvHistorico" runat="server" class="table table-responsive table-striped table-hover"  AutoGenerateColumns="False" BorderStyle="None">
                         <Columns>
                             <asp:BoundField DataField="nombreUsuario" HeaderText="Usuario"/>
                             <asp:BoundField DataField="nombreyapellido" HeaderText="Nombre y Apellido" />
