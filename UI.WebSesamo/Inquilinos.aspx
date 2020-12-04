@@ -43,12 +43,16 @@
                                </div> 
                                 <br />
                                <div class="row"> 
-                                <h5><asp:Label ID="Label2" runat="server" Text="Email: "></asp:Label></h5>
+                                <h5><asp:Label ID="Label2" runat="server" Text="Email: "></asp:Label>&nbsp;
+                                    <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Campo requerido" ForeColor="Red"></asp:RequiredFieldValidator>
+                                   </h5>
                                 <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" Enabled="False" TextMode="Email"></asp:TextBox>
                                </div>  
                                 <br />
                                <div class="row"> 
-                                 <h5><asp:Label runat="server" Text="Nombre y Apellido: "></asp:Label></h5>
+                                 <h5><asp:Label runat="server" Text="Nombre y Apellido: "></asp:Label>&nbsp;
+                                     <asp:RequiredFieldValidator ID="rfvNombreApellido" runat="server" ControlToValidate="txtNombreApellido" ErrorMessage="Campo requerido" ForeColor="Red"></asp:RequiredFieldValidator>
+                                   </h5>
                                  <asp:TextBox ID="txtNombreApellido" runat="server" CssClass="form-control" type="text" Enabled="False"></asp:TextBox>
                                </div> 
                             </div>
@@ -61,7 +65,9 @@
                                 </div>
                                 <br />
                                 <div class="row">
-                                    <h5><asp:Label ID="Label4" runat="server" Text="Contraseña: "></asp:Label></h5>
+                                    <h5><asp:Label ID="Label4" runat="server" Text="Contraseña: "></asp:Label>&nbsp;
+                                        <asp:RequiredFieldValidator ID="rfvContraseña" runat="server" ControlToValidate="txtContraseña" ErrorMessage="Campo requerido" ForeColor="Red"></asp:RequiredFieldValidator>
+                                    </h5>
                                     <asp:TextBox ID="txtContraseña" runat="server" CssClass="form-control" type="text" Enabled="False"></asp:TextBox>                     
                                 </div>
                                 <br />

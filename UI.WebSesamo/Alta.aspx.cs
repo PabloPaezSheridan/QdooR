@@ -103,8 +103,14 @@ namespace UI.WebSesamo
                 el.InsertUsuarioEdificio(Int32.Parse(ddlEdificiosxInmobiliaria.SelectedValue), txtNombreUsuario.Text, txtDpto.Text);
 
                 this.lblexito.Visible = true;
-                this.panelCampos.Visible = false;
-                this.panelConfirmar.Visible = false;
+                this.lblWarnNombreUsuario.Visible = false;
+
+                txtCelular.Text = "";
+                txtContraseña.Text = "";
+                txtEmail.Text = "";
+                txtNombreApellido.Text = "";
+                txtNombreUsuario.Text = "";
+                txtDpto.Text = "";
             }
             else
             {

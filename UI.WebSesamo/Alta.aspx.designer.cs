@@ -94,6 +94,15 @@ namespace UI.WebSesamo {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
+        /// Control rfvNombreUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombreUsuario;
+        
+        /// <summary>
         /// Control txtNombreUsuario.
         /// </summary>
         /// <remarks>
@@ -112,6 +121,15 @@ namespace UI.WebSesamo {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
+        /// Control rfvEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
+        
+        /// <summary>
         /// Control txtEmail.
         /// </summary>
         /// <remarks>
@@ -119,6 +137,15 @@ namespace UI.WebSesamo {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        
+        /// <summary>
+        /// Control rfvNombreApellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombreApellido;
         
         /// <summary>
         /// Control txtNombreApellido.
@@ -157,6 +184,15 @@ namespace UI.WebSesamo {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
+        /// Control rfvContraseña.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvContraseña;
+        
+        /// <summary>
         /// Control txtContraseña.
         /// </summary>
         /// <remarks>
@@ -191,6 +227,15 @@ namespace UI.WebSesamo {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label7;
+        
+        /// <summary>
+        /// Control rfvDpto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDpto;
         
         /// <summary>
         /// Control txtDpto.
